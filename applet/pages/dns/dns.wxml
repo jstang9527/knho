@@ -1,0 +1,126 @@
+<view class="page">
+    <view class="page__hd center">
+        <view class="page__title">云解析DNS</view>
+        <view class="page__desc">当前DNS IP: {{dns_ip}}</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14" bindtap="search"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">域名查询</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+        <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <view>{{inputVal}}.com</view>
+                </view>
+            </navigator>
+            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <view>{{inputVal}}.cn</view>
+                </view>
+            </navigator>
+            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <view>{{inputVal}}.org</view>
+                </view>
+            </navigator>
+            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <view>{{inputVal}}.vip</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+
+    <!-- 查询结果显示-->
+    <view wx:if="{{result}}" class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">查询结果：</view>
+      <view class="weui-panel__bd">
+        <view class="weui-cells weui-cells_after-title">
+              <view wx:for="{{result}}" wx:key="*this" class="weui-cell weui-cell_example ">
+                  <view class="weui-cell__hd">{{item.domain}}</view>
+                  <view class="weui-cell__bd query_item">[{{item.address}}]</view>
+                  <view class="weui-cell__ft">{{item.owner}}</view>
+              </view>
+          </view>
+      </view>
+    </view>
+
+    <!-- 我的解析记录-->
+    <view class="weui-panel weui-panel_access">
+
+      <view class="weui-panel__hd weui-cell mydns-bar">
+        <text class="">我的解析记录：</text>
+        <image bindtap="addRecord" class="weui-grid__icon add2" src="../../resources/pub/icon/add.svg" />
+      </view>
+
+      <view wx:if="{{!isAuthorized}}" class="unauth">您未登录</view>
+      <view class="weui-panel__bd" wx:else>
+        <view class="weui-cells weui-cells_after-title">
+              <view wx:for="{{myRecord}}" wx:key="personal" class="weui-cell weui-cell_example" data-index="{{index}}" bind:longpress="deleteItem">
+                  <view class="weui-cell__hd">
+                  <image src="../../resources/pub/icon/record.png" style="width:23px;height:23px;margin-right:2px;"></image>
+                      <!-- <icon type="circle" size="23"></icon> -->
+                  </view>
+                  <view class="weui-cell__bd">{{item.domain}}</view>
+                  <view class="weui-cell__ft">{{item.address}}</view>
+              </view>
+          </view>
+      </view>
+    </view>
+
+    <view class="page__bd">
+        <view class="weui-demo-dialog {{istrue ? 'weui-demo-dialog_show' : ''}}">
+          <view class="weui-mask" bindtap="closeDialog"></view>
+          <view class="weui-dialog__wrp" bindtap="closeDialog">
+              <view class="weui-dialog" catchtap="stopEvent">
+                <view class="weui-dialog__hd">
+                  <view class="weui-dialog__title">添加域名解析</view>
+                </view>
+                <view class="weui-dialog__bd">
+
+                <view class="weui-cells weui-cells_after-title">
+                    <view class="weui-cell from-data">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">域名</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                          <input class="weui-input" placeholder="请输入域名" maxlength="30" data-type="domain" bindinput="getInput" value="{{postDomain}}"/>
+                        </view>
+                    </view>
+                    <view class="weui-cell from-data">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">IP地址</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                          <input class="weui-input" placeholder="请输入IP地址" maxlength="30" data-type="address" bindinput="getInput" value="{{postAddress}}"/>
+                        </view>
+                    </view>
+                </view>
+
+                </view>
+                <view class="weui-dialog__ft">
+                    <view class="weui-dialog__btn weui-dialog__btn_default" bindtap="closeDialog">取消</view>
+                    <view class="weui-dialog__btn" bindtap="uploadData">确定</view>
+                </view>
+              </view>
+          </view>
+        </view>
+    </view>
+    
+</view>
+<view class="weui-footer version">
+  <view class="weui-footer__text">Version:1.0.0 | Build:1</view>
+</view>

@@ -1,0 +1,92 @@
+<!--pages/details/details.wxml-->
+<!-- get task_id得到的结果 ,再根据是file还是clamd的data-type再决定内容格式-->
+<!-- 文件内容格式 -->
+<view wx:if="{{taskResult.result.length == 1}}">
+  <view class="page">
+      <view class="page__hd">
+          <view class="page__title">Files Content</view>
+          <view class="page__desc">详情页</view>
+      </view>
+      <view class="page__bd">
+          <view class="weui-form-preview">
+              <view class="weui-form-preview__hd">
+                  <view class="weui-form-preview__item">
+                      <view class="weui-form-preview__label">任务状态</view>
+                      <view class="weui-form-preview__value_in-hd">{{taskResult.status}}</view>
+                  </view>
+              </view>
+              <view class="weui-form-preview__bd">
+                  <view class="weui-form-preview__item">
+                      <view class="weui-form-preview__label">任务ID</view>
+                      <view class="weui-form-preview__value">{{taskResult.task_id}}</view>
+                  </view>
+                  <view class="weui-form-preview__item">
+                      <view class="weui-form-preview__label">Clamd服务状态</view>
+                      <view class="weui-form-preview__value">{{taskResult.result[0].status}}</view>
+                  </view>
+                  <view class="weui-form-preview__item">
+                      <view class="weui-form-preview__label">病毒库版本</view>
+                      <view class="weui-form-preview__value">{{taskResult.result[0].version}}</view>
+                  </view>
+                  <view class="weui-form-preview__item">
+                      <view class="weui-form-preview__label">扫描结果</view>
+                      
+                  </view>
+                  <view class="weui-form-preview__value">{{taskResult.result[0].scanresult}}</view>
+              </view>
+              <view class="weui-form-preview__ft">
+                  <navigator url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">删除记录</navigator>
+              </view>
+          </view>
+      </view>
+  </view>
+</view>
+<view wx:else>
+  <view class="page">
+      <view class="page__hd">
+          <view class="page__title">Cluster Content</view>
+          <view class="page__desc">详情页</view>
+      </view>
+      <view class="page__bd">
+          <view class="weui-form-preview">
+              <view class="weui-form-preview__hd">
+                  <view class="weui-form-preview__item">
+                      <view class="weui-form-preview__label">任务状态</view>
+                      <view class="weui-form-preview__value_in-hd">{{taskResult.status}}</view>
+                  </view>
+                  <view class="weui-form-preview__item">
+                      <view class="weui-form-preview__label">任务ID</view>
+                      <view class="weui-form-preview__value">{{taskResult.task_id}}</view>
+                  </view>
+              </view>
+              <view class="weui-form-preview__bd">
+                  <view class="host_list" wx:for="{{taskResult.result}}" wx:key="*this">
+                    <view class="weui-form-preview__item">
+                        <view class="weui-form-preview__label">主机IP</view>
+                        <view class="weui-form-preview__value">{{item.ip}}</view>
+                    </view>
+                    <view class="weui-form-preview__item">
+                        <view class="weui-form-preview__label">Clamd服务状态</view>
+                        <view class="weui-form-preview__value">{{item.status}}</view>
+                    </view>
+                    <view class="weui-form-preview__item">
+                        <view class="weui-form-preview__label">连接信息</view>
+                        <view class="weui-form-preview__value">{{item.connstr}}</view>
+                    </view>
+                    <view class="weui-form-preview__item">
+                        <view class="weui-form-preview__label">病毒库版本</view>
+                        <view class="weui-form-preview__value">{{item.version}}</view>
+                    </view>
+                    <view class="weui-form-preview__item">
+                        <view class="weui-form-preview__label">扫描结果</view>
+                    </view>
+                    <view class="weui-form-preview__value">{{item.scanresult}}</view>
+                  </view>
+              </view>
+              <view class="weui-form-preview__ft">
+                  <navigator url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">删除记录</navigator>
+              </view>
+          </view>
+      </view>
+  </view>
+</view>

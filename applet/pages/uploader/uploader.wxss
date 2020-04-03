@@ -1,0 +1,5 @@
+/* pages/uploader/uploader.wxss */
+.confirm-btn{
+  margin: auto;
+  width: 60%;
+}

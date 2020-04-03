@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/clamav/clamav",
+    "pages/uploader/uploader",
+    "pages/details/details",
+    "pages/plan/plan",
+    "pages/menu/menu",
+    "pages/applist/applist",
+    "pages/homepage/homepage",
+    "pages/picker/picker",
+    "pages/weather/weather",
+    "pages/dns/dns",
+    "pages/blog/blog",
+    "pages/article/article",
+    "pages/test/test",
+    "pages/monitor/monitor"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "DevOps",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/test/test",
+        "text": "测试页",
+        "iconPath": "resources/tabbar/page-index.png",
+        "selectedIconPath": "resources/tabbar/page-index-color.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "resources/tabbar/page-index.png",
+        "selectedIconPath": "resources/tabbar/page-index-color.png"
+      },
+      {
+        "pagePath": "pages/menu/menu",
+        "text": "应用",
+        "iconPath": "resources/tabbar/page-application.png",
+        "selectedIconPath": "resources/tabbar/page-application-color.png"
+      },
+      {
+        "pagePath": "pages/homepage/homepage",
+        "text": "个人",
+        "iconPath": "resources/tabbar/page-personal.png",
+        "selectedIconPath": "resources/tabbar/page-personal-color.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

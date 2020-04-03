@@ -1,0 +1,60 @@
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result .weui-cell__bd{
+  padding: 2px 0 2px 20px;
+  color: #666;
+}
+.searchbar-result:before{
+    display: none;
+}
+.center{
+  background-color:  rgba(0, 128, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  border-radius: 10px;
+}
+.page__title{
+  color: white;
+}
+.weui-grid__icon{
+  margin: 0px;
+}
+.page__bd{
+  padding-bottom: 0px;
+}
+.mydns-bar{
+  display: flex;
+  justify-content: space-between;
+}
+.unauth{
+  margin: 30%;
+  text-align: center;
+}
+.from-data{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.version{
+  margin-top: 7%;
+  margin-bottom: 7%;
+}
+
+
+page{
+    background-color: #FFFFFF;
+}
+.weui-demo-dialog{
+  visibility:hidden;
+  opacity:0;
+  transition:opacity .3s;
+}
+.weui-demo-dialog_show{
+  visibility:visible;
+  opacity:1;
+}

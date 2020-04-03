@@ -1,0 +1,46 @@
+<!--pages/plan/plan.wxml-->
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__hd">
+        <view class="page__title">任务定制</view>
+        <view class="page__desc">Planning tasks</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-cells__title">表单</view>
+        
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell  weui-cell_vcode">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">扫描路径</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="自定义路径" maxlength="30" type="dirpath" bindinput="getInput" value="{{chosenDirPath}}"/>
+                </view>
+                <view class="weui-cell__ft">
+                      <picker range="{{dirPath}}" bindchange="pickerDirPath">
+                          <view class="weui-input weui-vcode-btn">选择路径</view>
+                      </picker>
+                </view>
+            </view>
+        </view>
+
+        <view wx:if="{{chosenIP.length >0}}">
+          <view class="weui-cells__title">已选择的IP</view>
+          <view class="weui-cells weui-cells_after-title">
+            <view wx:for="{{chosenIP}}" wx:key="*this" class="weui-cell " data-index="{{index}}" bind:longpress="deleteItem">
+              <view class="weui-cell__bd">{{item}}</view>
+            </view>
+          </view>
+          <view class="weui-cells__tips">长按删除</view>
+        </view>
+        <view class="weui-btn-area">
+          <picker bindchange="bindIpPickerChange" range="{{registerClamdIP}}">
+            <button type="default">添加已注册clamav服务的IP地址</button>
+            <view class="weui-cells__tips">可前往Admin Web页面进行注册</view>
+          </picker>
+        </view>
+
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="onSave">提交任务</button>
+        </view>
+    </view>
+</view>

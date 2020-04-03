@@ -1,0 +1,40 @@
+/* pages/clamav/clamav.wxss */
+.clamav_title{
+  color: #aa0c26;
+  font-weight: bold;
+}
+.files{
+  background-color: #aa0c26;
+}
+.files_btn{
+  position: absolute;
+  left: 90%;
+  top: 15%;
+}
+.files_title{
+  font-weight: bold;
+}
+.files_content{
+  color: white
+}
+.scan_icon{
+  display: block;
+  padding-right: 5px
+}
+.scan_loading{
+  margin-left: 2px;
+  margin-right: 5px;
+}
+.footer_version{
+  text-align: center
+}
+.non-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2%;
+  padding: 3%;
+}
+.clamitem{
+  font-size: 14px;
+}

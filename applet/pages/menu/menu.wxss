@@ -1,0 +1,5 @@
+/* pages/menu/menu.wxss */
+.unauth{
+  text-align: center;
+  margin: 10% 0px;
+}

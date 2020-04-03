@@ -1,0 +1,14 @@
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__h2">{{title}}</view>
+            <view class="page__desc"><text decode="true">作者:{{author}} &nbsp; 阅读数:{{pageview}}</text></view>
+            <view wx:for="{{content}}" wx:for-index="idx" wx:for-item="contentItem" wx:key="contentlist" class="weui-article__section"> 
+                <view class="weui-article__h3">{{contentItem.brief}}</view>
+                <view wx:for="{{contentItem.body}}" wx:key="second" class="">
+                    <text space="nbsp" class="weui-article__p">{{item}}</text>
+                </view>
+            </view>
+        </view>
+    </view>   
+</view>

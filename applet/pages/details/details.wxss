@@ -1,0 +1,11 @@
+/* pages/details/details.wxss */
+.weui-form-preview{
+    margin-bottom: 25px;
+}
+.host_list{
+  border-bottom: dashed 1px #999;
+}
+.host_list:last-of-type{
+  border-bottom: none;
+  padding: 5px 0;
+}

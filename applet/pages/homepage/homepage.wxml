@@ -1,0 +1,82 @@
+<!--pages/homepage/homepage.wxml-->
+<view class="page">
+  <view class="weui-panel weui-panel_access">
+    <view class="pagetop">
+      <view class="userinfo">
+        <view wx:if="{{!hasUserInfo}}" class="userinfo">
+          <image bindtap="authorize" class="userinfo-avatar" src="../../resources/pub/icon/user.png" mode="cover"></image>
+          <view class='userflag'>点击登录</view> 
+        </view>
+        <block wx:else>
+          <image bindtap="getStatusFromRemote" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+          <text class="userinfo-nickname userflag">{{userInfo.nickName}}</text>
+        </block>
+      </view>
+      <!--右边栏-->
+      <view class="right-box">
+        <view wx:if="{{hasUserInfo}}">
+          <image bindtap="logout" src="../../resources/pub/icon/out.jpg" class="top-right" mode="cover"></image>
+          <image data-type='focusCity' bindtap='onNavigatorTap' src="../../resources/pub/icon/in.jpg" class="top-right" mode="cover"></image>
+        </view>
+      </view>
+    </view>
+    
+    <view class="weui-panel__hd">我的关注</view>
+  
+    <view wx:if="{{!hasUserInfo}}" class="unauth">
+      <text class="text_align">您还未登录</text>
+    </view>
+    <view wx:else class="page__bd">
+      <view class="weui-grids">
+        <block wx:for="{{personal_grids}}" wx:key="personalItem">
+          <navigator url="" class="weui-grid" hover-class="weui-grid_active" data-index='{{index}}' data-type='{{item.application}}' bindtap='onNavigatorTapApp' bind:longpress="deletePersonalItem">
+            <image class="weui-grid__icon" src="../../resources/app/icon_{{item.application}}.png" />
+            <view class="weui-grid__label">{{item.name}}</view>
+          </navigator>
+          <navigator wx:if="{{personal_grids[personal_grids.length-1] == item}}" bindtap='addApp' class="weui-grid" hover-class="weui-grid_active">
+            <image class="weui-grid__icon" src="../../resources/pub/icon/add.svg" />
+            <view class="weui-grid__label">Add</view>
+          </navigator>
+        </block>
+      </view>
+  
+      <view class="weui-grids" wx:if='{{personal_grids.length==0}}'>
+        <block>
+          <navigator wx:if="{{personal_grids[personal_grids.length-1] == item}}" bindtap='addApp' class="weui-grid" hover-class="weui-grid_active">
+            <image class="weui-grid__icon" src="../../resources/pub/icon/add.svg" />
+            <view class="weui-grid__label">Add</view>
+          </navigator>
+        </block>
+      </view>
+    </view>
+
+
+
+    <view class="weui-panel">
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_small-appmsg">
+          <view class="weui-cells weui-cells_in-small-appmsg">
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" data-type='focusStock' bindtap='onNavigatorTap'>
+              <view class="weui-cell__hd">
+                <image src="{{icon20}}" style="width: 20px;height: 20px;margin-right: 5px" />
+              </view>
+              <view class="weui-cell__bd weui-cell_primary">
+                <view>我的监控告警</view>
+              </view>
+              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" data-type='focusConstellation' bindtap='onNavigatorTap'>
+              <view class="weui-cell__hd">
+                <image src="{{icon20}}" style="width: 20px;height: 20px;margin-right: 5px" />
+              </view>
+              <view class="weui-cell__bd weui-cell_primary">
+                <view>我订阅的服务</view>
+              </view>
+              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

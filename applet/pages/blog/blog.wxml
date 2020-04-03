@@ -1,0 +1,22 @@
+<!--主盒子-->
+<view class="container">
+  <!-- 左侧栏 -->
+  <view class='nav_left'>
+    <view wx:for="{{category}}" wx:key="*this">
+      <view class="nav_left_items {{curNav == index ? 'active' : ''}}" bindtap="switchRightTab" data-id="{{index}}">{{item}}</view>
+    </view>
+  </view>
+  <!-- 右侧栏 -->
+  <view class="nav_right">
+
+    <view class="weui-cells weui-cells_after-title">
+      <navigator url="" wx:for="{{articles}}" wx:key="article" class="weui-cell weui-cell_example" bindtap="articleDetail" data-index="{{index}}">
+        <view wx:if="{{index <1 }}" class="weui-cell__hd">
+        <image src="../../resources/pub/icon/new.gif" style="margin-right: 6px;vertical-align: middle;width:20px; height: 10px;"></image>
+        </view>
+        <view class="weui-cell__bd article_list" >{{item.title}}</view>
+      </navigator>
+    </view>
+  </view>
+  
+</view>

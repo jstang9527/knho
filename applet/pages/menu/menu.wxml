@@ -1,0 +1,44 @@
+<view class="weui-panel weui-panel_access">
+  <view class="page">
+    <view class="weui-panel__hd">我的关注</view>
+  
+    <view wx:if="{{!on_line}}" class="unauth">
+      <text class="text_align">您还未登录</text>
+    </view>
+    <view wx:else class="page__bd">
+      <view class="weui-grids">
+        <block wx:for="{{personal_grids}}" wx:key="personalItem">
+          <navigator url="" class="weui-grid" hover-class="weui-grid_active" data-index='{{index}}' data-type='{{item.application}}' bindtap='onNavigatorTap' bind:longpress="deletePersonalItem">
+            <image class="weui-grid__icon" src="../../resources/app/icon_{{item.application}}.png" />
+            <view class="weui-grid__label">{{item.name}}</view>
+          </navigator>
+          <navigator wx:if="{{personal_grids[personal_grids.length-1] == item}}" bindtap='addApp' class="weui-grid" hover-class="weui-grid_active">
+            <image class="weui-grid__icon" src="../../resources/pub/icon/add.svg" />
+            <view class="weui-grid__label">Add</view>
+          </navigator>
+        </block>
+      </view>
+  
+      <view class="weui-grids" wx:if='{{personal_grids.length==0}}'>
+        <block>
+          <navigator wx:if="{{personal_grids[personal_grids.length-1] == item}}" bindtap='addApp' class="weui-grid" hover-class="weui-grid_active">
+            <image class="weui-grid__icon" src="../../resources/pub/icon/add.svg" />
+            <view class="weui-grid__label">Add</view>
+          </navigator>
+        </block>
+      </view>
+    </view>
+
+    <view class="weui-panel__hd">应用列表</view>
+      <view class="page__bd">
+        <view class="weui-grids">
+            <block wx:for="{{all_grids}}" wx:key="publicItem">
+                <navigator url="" class="weui-grid" hover-class="weui-grid_active" data-index='{{index}}' bindtap='onNavigatorTap'>
+                    <image class="weui-grid__icon" src="../../resources/app/icon_{{item.application}}.png" />
+                    <view class="weui-grid__label">{{item.name}}</view>
+                </navigator>
+            </block>
+        </view>
+      </view>
+    </view>
+</view>

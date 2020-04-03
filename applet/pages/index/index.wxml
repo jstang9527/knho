@@ -1,0 +1,71 @@
+<!--index.wxml-->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}" 
+  indicator-active-color="{{activeColor}}">
+  <block wx:for="{{imgUrls}}" wx:key="imgurl">
+    <swiper-item>
+      <navigator url="{{item.link}}" hover-class="navigator-hover">
+        <image src="{{item.url}}" class="slide-image" width="355" height="200" />
+      </navigator>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="page">
+    <!-- 天气 -->
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">所在城市：</view>
+      <view class="weui-panel__bd">
+        <navigator url="" wx:for='{{weatherData}}' wx:key="*this" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="../../resources/app/weather/{{item.img_src}}.png" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">{{item.city}}-{{item.week}}-{{item.weather}}</view>
+            <view class="weui-media-box__desc">
+              <text>{{item.date}} {{item.datetime}}</text>
+            </view>
+            <view wx:if='{{item.temperature > 19}}' class="weui-media-box__desc">
+              <text style="color: red">温度：{{item.temperature}}度</text><text> , 天气质量：{{item.quality}}</text>
+            </view>
+            <view wx:else class="weui-media-box__desc">
+              <text style="color: green">温度：{{item.temperature}}度</text><text> , 天气质量：{{item.quality}}</text>
+            </view>
+            <view class="weui-media-box__desc">
+              <text>相对湿度：{{item.humidity}},风向: {{item.wind_direct}}</text>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+    <!-- 服务 -->
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">消息公告：</view>
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_text" wx:for='{{}}' wx:key="*this">
+          <view class="weui-media-box__title weui-media-box__title_in-text" wx:if='{{item.is_rising}}'>{{item.name}} (+ {{item.sub}})</view>
+          <view class="weui-media-box__title weui-media-box__title_in-text" wx:else>{{item.name}} (-{{item.sub}})</view>
+          <view>当前：{{item.now_price}}</view>
+          <view class="weui-media-box__info">
+            <view class="weui-media-box__info__meta">最高：{{item.today_max}}</view>
+            <view class="weui-media-box__info__meta">最低：{{item.today_min}}</view>
+            <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">开盘：{{item.start_price}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 告警 -->
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">我的告警：</view>
+      <view class="weui-panel__bd">
+        <view class="weui-cells weui-cells_after-title">
+              <view wx:for="{{result}}" wx:key="alter" class="weui-cell weui-cell_example ">
+                  <view class="weui-cell__hd">
+                      <icon class="scan_icon warn-icon" type="warn" size="23" color="#F43530"></icon>
+                  </view>
+                  <view class="weui-cell__bd">{{item.name}}</view>
+                  <view class="weui-cell__ft">{{item.value}}</view>
+              </view>
+          </view>
+      </view>
+    </view>
+  
+</view>
