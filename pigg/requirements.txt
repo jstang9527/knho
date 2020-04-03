@@ -5,7 +5,7 @@ billiard==3.6.3.0
 celery==4.4.1
 certifi==2019.11.28
 chardet==3.0.4
-Django==2.0
+Django==2.2.10
 dnspython==1.16.0
 entrypoints==0.3
 eventlet==0.25.1
