@@ -1,0 +1,32 @@
+# 单机Prometheus
+# docker run -d -p 3000:3000 --name=grafana --network host -e "GF_AUTH_BASIC_ENABLED=true" -e "GF_AUTH_ANONYMOUS_ENABLED=false"  grafana/grafana:4.2.0
+# docker run -d  -v "/proc:/host/proc" -v "/sys:/host/sys" -v "/:/rootfs" --name node-export --net=host prom/node-exporter --path.procfs /host/proc --path.sysfs /host/sys --collector.filesystem.ignored-mount-points "^/(sys|proc|dev|host|etc)($|/)"
+# docker run --volume=/:/rootfs:ro --volume=/var/run:/var/run:rw --volume=/sys:/sys:ro --volume=/var/lib/docker/:/var/lib/docker:ro --detach=true --name=cadvisor --net=host google/cadvisor:latest
+# docker run -d -p 9090:9090 -v /opt/pigg/prometheus.yml:/etc/prometheus/prometheus.yml --name prometheus --net=host prom/prometheus
+
+global:
+  scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+      # - alertmanager:9093
+      #
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'prometheus'
+    static_configs:
+    - targets: ['localhost:9090']
+  
+  - job_name: 'cadvisor'
+    static_configs:
+    - targets: ['localhost:8080', '47.92.255.39:8080']
+
+  - job_name: 'node-export'
+    static_configs:
+    - targets: ['localhost:9100', '47.92.255.39:9100']
