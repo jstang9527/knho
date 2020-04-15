@@ -1,7 +1,7 @@
-import json
 from django.http import JsonResponse
 from .models import Category, Article
-from utils.response import wrap_json_response, ReturnCode, CommonResponseMixin
+from utils.response import CommonResponseMixin
+
 
 # 获取所有类目
 def all_category(request):
@@ -16,7 +16,7 @@ def all_category(request):
 #  获取某个类目下所有文章名
 def article_category(request):
     name = request.GET.get('category')
-    category = Category.objects.get(name=name) # 不会没有，因为前端从all_category获得准确的数据
+    category = Category.objects.get(name=name)  # 不会没有，因为前端从all_category获得准确的数据
     articles = Article.objects.filter(category=category).order_by('-publish_date')  # 最新列表
     data = []
     for article in articles:
@@ -51,7 +51,7 @@ def get_article(request):
         # chapter = body
         paragraphs = chapter.split('\n')  # 按段落再分,可能会出现空段落
         
-        for paragraph in paragraphs:  
+        for paragraph in paragraphs:
             if paragraph:      # 空段落则跳过
                 tempDuanluo.append(paragraph)
 

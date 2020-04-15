@@ -1,0 +1,30 @@
+celery beat v4.4.1 (cliffs) is starting.
+__    -    ... __   -        _
+LocalTime -> 2020-04-14 19:17:06
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> celery.beat.PersistentScheduler
+    . db -> celerybeat-schedule
+    . logfile -> [stderr]@%WARNING
+    . maxinterval -> 5.00 minutes (300s)
+celery beat v4.4.1 (cliffs) is starting.
+__    -    ... __   -        _
+LocalTime -> 2020-04-14 19:20:54
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> celery.beat.PersistentScheduler
+    . db -> celerybeat-schedule
+    . logfile -> [stderr]@%WARNING
+    . maxinterval -> 5.00 minutes (300s)
+celery beat v4.4.1 (cliffs) is starting.
+__    -    ... __   -        _
+LocalTime -> 2020-04-14 19:26:15
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> celery.beat.PersistentScheduler
+    . db -> celerybeat-schedule
+    . logfile -> [stderr]@%WARNING
+    . maxinterval -> 5.00 minutes (300s)

@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'apis.apps.ApisConfig',
     'authorization.apps.AuthorizationConfig',
     'landns.apps.LandnsConfig',
-    'blog.apps.BlogConfig'
+    'blog.apps.BlogConfig',
+    'alter.apps.AlterConfig'
     
 ]
 
@@ -150,6 +151,8 @@ DNS_CONFIG = os.path.join(RESOURCES_DIR, 'data', 'dnsmasq.conf')
 # Prometheus
 PROMETHEUS_QUERY_VECTOR_URL = 'http://localhost:9090/api/v1/query?query='
 PROMETHEUS_QUERY_MATRIX_URL = 'http://localhost:9090/api/v1/query_range?query='
+# sshd日志分析
+ANALYSIS_DIR = os.path.join(BASE_DIR, 'ops', 'analysis')
 
 # session超时时间[1h](单位秒)
 SESSION_COOKIE_AGE = 60 * 60

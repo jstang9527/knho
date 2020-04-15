@@ -1,11 +1,11 @@
 // pages/picker/picker.js
 const cookieUtil = require('../../utils/cookie.js')
-const shStock = require('../../resources/data/stock/sh-100.js')
-const szStock = require('../../resources/data/stock/sz-100.js')
+// const shStock = require('../../resources/data/stock/sh-100.js')
+// const szStock = require('../../resources/data/stock/sz-100.js')
 
 var allStockData = []
-Array.prototype.push.apply(allStockData, szStock.data)
-Array.prototype.push.apply(allStockData, shStock.data)
+// Array.prototype.push.apply(allStockData, szStock.data)
+// Array.prototype.push.apply(allStockData, shStock.data)
 
 const app = getApp()
 

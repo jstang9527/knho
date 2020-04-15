@@ -1,0 +1,179 @@
+<!--顶部-->
+
+<view class="top-title">
+  <view class="colum">
+    <text class="title">微服务</text>
+    <view class="page__desc">Power by Kubernetes</view>
+  </view>
+</view>
+
+<!--横向tabbar-->
+<view class='contentBottom'>
+    <view class='bar'>
+      <view class='bar-item' wx:for="{{category}}" wx:key="*this">
+        <view class="nav_left_items {{curNav == index ? 'active' : ''}}" bindtap="switchRightTab" data-id="{{index}}">{{item}}</view>
+      </view>
+    </view>
+</view>
+<view class="body" wx:if="{{curNav == 0}}">
+  <view>
+    <!--应用内容-->
+    <view class="mico-content">
+      <view class="row-item">
+        <view class="model">⏰定时发布</view>
+        <view class="model">📑导入模板</view>
+      </view>
+      <view class="row-item">
+        <view class="item-name">应用名</view>:
+        <input class="input" placeholder="必填"/>
+      </view>
+      <view class="row-item">
+        <view class="item-name">标签名</view>:
+        <input class="input" placeholder="必填"/>
+      </view>
+      <view class="row-item">
+        <view class="item-name">容器镜像</view>:
+        <input class="input" placeholder="必填"/>
+      </view>
+      <view class="row-item">
+        <view class="item-name">拉取密钥</view>:
+        <input class="input" placeholder="选填"/>
+      </view>
+      <view class="row-item">
+        <view class="item-name">容器个数</view>:
+        <view class="input input-slider">
+          <slider class="slider" value="1" max="10" block-size="18" show-value/>
+        </view> 
+      </view>
+      <view class="row-item">
+        <view class="item-name">内部端口</view>:
+        <input class="input" placeholder="80:8000,8443:443"/>
+      </view>
+      <view class="row-item">
+        <view class="item-name">外部端口</view>:
+        <input class="input" placeholder="30080:80,38443:8443"/>
+      </view>
+      <view class="row-item">
+        <view class="item-name">内存需求</view>:
+        <input class="input" placeholder="250m"/>
+      </view>
+      <view class="row-item">
+        <view class="item-name">CPU核数</view>:
+        <view class="input input-slider">
+          <slider class="slider" value="1" max="4" block-size="18" show-value/>
+        </view>
+      </view>
+      <view class="row-item">
+        <view class="item-name">内存限制</view>:
+        <input class="input" placeholder="250m"/>
+      </view>
+      <view class="row-item">
+        <view class="item-name">CPU限制</view>:
+        <input class="input" placeholder="250m"/>
+      </view>
+      <view class="row-item">
+        <view class="item-name">运行命令</view>:
+        <input class="input" placeholder="选填"/>
+      </view>
+      <view class="row-item">
+        <view class="item-name">运行参数</view>:
+        <view class="input">
+          <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell">
+                  <view class="weui-cell__bd">
+                      <textarea class="weui-textarea textarea" placeholder="选填" style="height: 3.3em" />
+                  </view>
+              </view>
+          </view>
+        </view>
+      </view>
+      <view class="row-item">
+        <view class="item-name">环境变量</view>:
+        <view class="input">
+          <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell">
+                  <view class="weui-cell__bd">
+                      <textarea class="weui-textarea textarea" placeholder="选填" style="height: 3.3em" />
+                      <!-- <view class="weui-textarea-counter">0/200</view> -->
+                  </view>
+              </view>
+          </view>
+        </view>
+      </view>
+      <view class="row-item">
+        <view class="item-name">描述</view>:
+        <view class="input">
+          <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell">
+                  <view class="weui-cell__bd">
+                      <textarea class="weui-textarea textarea" placeholder="选填" style="height: 3.3em" />
+                      <!-- <view class="weui-textarea-counter">0/200</view> -->
+                  </view>
+              </view>
+          </view>
+        </view>
+      </view>
+      <view class="row-item">
+        <view class="model confim">✅确认发布</view>
+        <view class="model">📦保存模板</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!--控制台内容-->
+<!--主盒子-->
+
+<view wx:if="{{curNav == 1}}" class="control-container">
+  <!-- 左侧栏 -->
+  <view class='control-nav_left'>
+    <view wx:for="{{list}}" wx:key="*this">
+      <view class="control-nav_left_items {{control == index ? 'active' : ''}}" bindtap="controlSwitchRightTab" data-id="{{index}}">{{item}}</view>
+    </view>
+  </view>
+  <!-- 右侧栏 -->
+  <view class="control-nav_right">
+    <!-- <view class="weui-cells weui-cells_after-title"> -->
+      <view class="control-title">
+        <text>名称</text>
+        <text>状态</text>
+        <text>操作</text>
+        <text>更多</text>
+      </view>
+      <view class="control-title">
+        <text>e</text>
+        <text>🟢</text>
+        <text>🗑</text>
+        <text>···</text>
+      </view>
+      <view class="control-title">
+        <text>b</text>
+        <text>🔴</text>
+        <text>🗑</text>
+        <text>···</text>
+      </view>
+    <!-- </view> -->
+  </view>
+</view>
+<!--底部版本-->
+
+<!--未完成提示-->
+<view class="page__bd">
+    <view class="weui-demo-dialog {{istrue ? 'weui-demo-dialog_show' : ''}}">
+      <view class="weui-mask" bindtap="closeDialog"></view>
+      <view class="weui-dialog__wrp" bindtap="closeDialog">
+          <view class="weui-dialog" catchtap="stopEvent">
+            <view class="weui-dialog__hd">
+              <view class="weui-dialog__title">正在建设中</view>
+            </view>
+            <view class="weui-dialog__bd">
+              <image class="weui-article__img" src="../../resources/pub/struct.png" mode="aspectFill" style="max-width:100%;"/>
+            <!-- <text>asasas</text> -->
+            </view>
+            <view class="weui-dialog__ft">
+                <view class="weui-dialog__btn weui-dialog__btn_default" bindtap="closeDialog">返回</view>
+                <view class="weui-dialog__btn" bindtap="closeDialog">确定</view>
+            </view>
+          </view>
+      </view>
+    </view>
+</view>

@@ -3,7 +3,9 @@ const cookieUtils = require('../../utils/cookie.js')
 Page({
   //页面初始数据
   data: {
-    all_grids: [{ name: '应用1' }, { name: '应用2' }],
+    apps: [{ name: '应用1' }, { name: '应用2' }],
+    build_apps: [],
+    pre_apps: [],
     personal_grids: null, //个人应用
     on_line: false,
     on_save: false,
@@ -19,7 +21,16 @@ Page({
       url: app.globalData.serverUrl + app.globalData.apiVersion + '/service/menu/list',
       success: function (res) {
         var allMenuData = res.data.data
-        that.setData({ all_grids: allMenuData })
+        var apps = []
+        var build_apps = []
+        var pre_apps = []
+        for(var i=0;i<allMenuData.length;i++){
+          if(allMenuData[i].category == 'build'){build_apps.push(allMenuData[i])}
+          else if(allMenuData[i].category == 'prepare'){pre_apps.push(allMenuData[i])}
+          else{apps.push(allMenuData[i])}
+        }
+        that.setData({ apps:apps, build_apps:build_apps, pre_apps:pre_apps })
+        wx.hideLoading()
       }
     })
   },
@@ -27,27 +38,21 @@ Page({
   onNavigatorTap: function (e) {
     var dataType = e.currentTarget.dataset.type
     var index = e.currentTarget.dataset.index
-    if (dataType) {
-      var appItem = this.data.personal_grids[index]
-    } else {
-      var appItem = this.data.all_grids[index]
-    }
-    console.log('[在wxml中，只有用户数据定义了data-typt属性]，您点击的数据类型为：' + dataType + '点击的app为：')
-    console.log(appItem)
+    console.log(dataType)
+    //appItem是选哪个分类，比如build还是ready类
+    if (dataType) { var appItem = this.data.apps[index] } 
+    else { var appItem = this.data.build_apps[index] }
+    //全局通用页面跳转
     if (appItem.application == 'weather') { wx.navigateTo({ url: '../weather/weather', })} 
     else if (appItem.application == 'monitor') { wx.navigateTo({ url: '../monitor/monitor', })} 
-    else if (appItem.application == 'stock') { wx.navigateTo({ url: '../stock/stock' })} 
-    else if (appItem.application == 'joke') { wx.navigateTo({ url: '../service/service?type=joke' })} 
-    else if (appItem.application == 'constellation') { wx.navigateTo({ url: '../service/service?type=constellation', })} 
     else if (appItem.application == 'clamav') { wx.navigateTo({ url: '../clamav/clamav', }) } 
     else if (appItem.application == 'dns'){ wx.navigateTo({ url: '../dns/dns', }) } 
     else if (appItem.application == 'blog') { wx.navigateTo({ url: '../blog/blog', })}
+    else if (appItem.application == 'mico-service') { wx.navigateTo({ url: '../mico/mico', })}
+    else if (appItem.application == 'attack') { wx.navigateTo({ url: '../ithreat/ithreat', })}
   },
 
-  /**
-   * 个人应用数据
-   */
-  //请求后台获取用户个人应用数据
+  //！！！已抛弃、该功能在个人页面中实现、请求后台获取用户个人应用数据
   updatePersonalMenuData: function () {
     var that = this
     var cookie = cookieUtils.getCookieFromStorage()
@@ -72,7 +77,7 @@ Page({
       }
     })
   },
-  //获取用户状态，然后是否展示用户数据
+  //！！！已抛弃、该功能在个人页面中实现、获取用户状态，然后是否展示用户数据
   updatePersonalData_baseOn_UserAuthStatus: function () {
     var that = this
     //console.log('全局认证状态：'+app.getAuthStatus())
@@ -112,8 +117,9 @@ Page({
       title: '加载中',
     })
     this.updatePublicMenuData()
-    this.updatePersonalData_baseOn_UserAuthStatus()
+    // this.updatePersonalData_baseOn_UserAuthStatus()
   },
+  //!!!已抛弃、具体在个人页面中实现
   addApp: function () {
     var that = this
     if (!that.data.on_line) {
@@ -124,7 +130,7 @@ Page({
       url: '../applist/applist?userMenu=' + JSON.stringify(that.data.personal_grids),
     })
   },
-  //删除用户关注的应用
+  //!!!已抛弃、具体在个人页面中实现，删除用户关注的应用
   deletePersonalItem: function (e) {
     var that = this
     var deleteType = e.currentTarget.dataset.type
@@ -145,6 +151,7 @@ Page({
       }
     })
   },
+  // !!!已抛弃、具体在个人页面中实现
   onSave: function () {
     var that = this
     var cookie = cookieUtils.getCookieFromStorage()

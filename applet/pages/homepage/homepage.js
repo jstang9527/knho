@@ -15,16 +15,17 @@ Page({
     personal_grids: null, //个人应用
   },
 
-  onReadCookies: function () {
-    wx.request({
-      url: app.globalData.serverUrl + app.globalData.apiVersion + '/auth/test',
-      success(res) {
-        var cookie = cookieUtil.getSessionIDFromResponse(res)
-        console.log(cookie)
-      }
+  getUserInfo: function(e) {
+    //点击取消按钮
+    if (e.detail.userInfo == null) { console.log("授权失败") } 
+    else {//点击允许按钮
+      this.setData({ userInfo: e.detail.userInfo, hasUserInfo: true })
     }
-    )
+    //全局对象用户信息赋值
+    app.globalData.userInfo = e.detail.userInfo
+    this.authorize()
   },
+  
   //应用
   onNavigatorTapApp: function (e) {
     var dataType = e.currentTarget.dataset.type
@@ -36,41 +37,16 @@ Page({
     }
     console.log('[在wxml中，只有用户数据定义了data-typt属性]，您点击的数据类型为：' + dataType + '点击的app为：')
     console.log(appItem)
-    if (appItem.application == 'weather') {
-      wx.navigateTo({ url: '../weather/weather', })
-    } else if (appItem.application == 'backup-image') {
-      wx.navigateTo({
-        url: '../backup/backup',
-      })
-    } else if (appItem.application == 'stock') {
-      wx.navigateTo({
-        url: '../stock/stock'
-      })
-    } else if (appItem.application == 'joke') {
-      wx.navigateTo({
-        url: '../service/service?type=joke'
-      })
-    } else if (appItem.application == 'constellation') {
-      wx.navigateTo({
-        url: '../service/service?type=constellation',
-      })
-    } else if (appItem.application == 'clamav') {
-      wx.navigateTo({
-        url: '../clamav/clamav',
-      })
-    } else if (appItem.application == 'dns') {
-      wx.navigateTo({
-        url: '../dns/dns',
-      })
-    } else if (appItem.application == 'blog') {
-      wx.navigateTo({
-        url: '../blog/blog',
-      })
-    }
+    if (appItem.application == 'weather') { wx.navigateTo({ url: '../weather/weather', })} 
+    else if (appItem.application == 'monitor') { wx.navigateTo({ url: '../monitor/monitor', })} 
+    else if (appItem.application == 'clamav') { wx.navigateTo({ url: '../clamav/clamav', }) } 
+    else if (appItem.application == 'dns'){ wx.navigateTo({ url: '../dns/dns', }) } 
+    else if (appItem.application == 'blog') { wx.navigateTo({ url: '../blog/blog', })}
+    else if (appItem.application == 'mico-service') { wx.navigateTo({ url: '../mico/mico', })}
   },
 
 
-  // navigator跳转处理
+  // 一条条的长bar, navigator跳转处理
   onNavigatorTap: function (event) {
     var that = this
     var promise = authUtil.getStatus(app)
@@ -81,23 +57,13 @@ Page({
       } else {
         that.setData({ isLogin: false })
         app.setAuthStatus(false)
-        wx.showToast({
-          title: '请先授权登陆', icon: 'none'
-        })
+        wx.showToast({ title: '请先授权登陆', icon: 'none' })
       }
       if (status) {
-        // 获取由 data-type 标签传递过来的参数
-        console.log(event.currentTarget.dataset.type)
         var navigatorType = event.currentTarget.dataset.type
-
-        if (navigatorType == 'focusCity') {
-          navigatorType = 'city'
-        } else if (navigatorType == 'focusStock') {
-          navigatorType = 'stock'
-        } else {
-          navigatorType = 'constellation'
-        }
-        var url = '../picker/picker?type=' + navigatorType
+        if (navigatorType == 'focusCity') { navigatorType = 'city' }
+        // else if (navigatorType == 'focusStock') { navigatorType = 'stock' } 
+        // else { navigatorType = 'constellation' }
         wx.navigateTo({
           url: '../picker/picker?type=' + navigatorType,
         })
@@ -115,31 +81,24 @@ Page({
         var code = res.code
         var appId = app.globalData.appId
         var nickname = app.globalData.userInfo.nickName
+        wx.showLoading({ title: '登录中', })
         // 请求后台
         wx.request({
           url: app.globalData.serverUrl + app.globalData.apiVersion + '/auth/authorize',
           method: 'POST',
-          data: {
-            code: code,
-            appId: appId,
-            nickname: nickname
-          },
-          header: {
-            'content-type': 'application/json' // 默认值
-          },
+          data: { code: code, appId: appId, nickname: nickname },
+          header: { 'content-type': 'application/json' },// 默认值
           success: function (res) {
-            wx.showToast({
-              title: '授权成功',
-            })
+            wx.showToast({ title: '授权成功', })
             // 保存cookie
             var cookie = cookieUtil.getSessionIDFromResponse(res)
             cookieUtil.setCookieToStorage(cookie)
-            that.setData({
-              isLogin: true,
-              userInfo: app.globalData.userInfo,
-              hasUserInfo: true
-            })
+            that.setData({ isLogin: true, userInfo: app.globalData.userInfo, hasUserInfo: true })
             app.setAuthStatus(true)
+            wx.hideLoading()
+          },
+          fail: function(res) {
+            wx.hideLoading()
           }
         })
       }
@@ -166,6 +125,7 @@ Page({
       }
     })
   },
+  //获取用户状态，是否过期等
   getStatusFromRemote: function () {
     var that = this
     var cookie = cookieUtil.getCookieFromStorage()
@@ -185,9 +145,6 @@ Page({
     })
   },
 
-  /**
-   * 个人应用数据
-   */
   //请求后台获取用户个人应用数据
   updatePersonalMenuData: function () {
     var that = this
@@ -208,7 +165,6 @@ Page({
             icon: 'none'
           })
         }
-        wx.hideLoading()
         that.setData({ personal_grids: personalMenuData })
       }
     })
@@ -238,8 +194,8 @@ Page({
           wx.showLoading({ title: '删除中...', })
           personal_grids.splice(deleteIndex, 1)
           that.setData({ personal_grids: personal_grids })
-          //再调研POST REQUEST更新后台用户数据
           that.onSave()
+          wx.hideLoading()
         }
       }
     })
@@ -254,66 +210,29 @@ Page({
       header: header,
       method: 'POST',
       data: { data: that.data.personal_grids },
-      success: function (res) {
-        wx.hideLoading()
-        wx.showToast({ title: '已移除', })
-      }
+      success: function (res) { wx.showToast({ title: '已移除', }) }
     })
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  //生命周期函数--监听页面加载
   onLoad: function (options) {
     this.updatePersonalMenuData()
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
     this.updatePersonalMenuData()
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
   onPullDownRefresh: function () {
     this.updatePersonalMenuData()
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  //！！！已弃用, 获取cookie信息
+  onReadCookies: function () {
+    wx.request({
+      url: app.globalData.serverUrl + app.globalData.apiVersion + '/auth/test',
+      success(res) {
+        var cookie = cookieUtil.getSessionIDFromResponse(res)
+        console.log(cookie)
+      }
+    }
+    )
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

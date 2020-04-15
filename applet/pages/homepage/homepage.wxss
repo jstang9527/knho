@@ -6,23 +6,18 @@
   margin: 2%;
   width: 40%
 }
-
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
-  /* margin: 20rpx; */
   margin-top: 5px;
   border-radius: 50%;
 }
-
 .userinfo-nickname {
   color: #fff;
 }
-
 .usermotto {
   margin-top: 10px;
 }
-
 .button-sp-area{
     margin: 0 auto;
     padding-top: 15px;
@@ -30,6 +25,7 @@
 }
 .userflag{
   font-size: 12px;
+  font-weight: 400;
 }
 .pagetop{
   height: 30%;

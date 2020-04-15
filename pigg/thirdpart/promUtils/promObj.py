@@ -1,33 +1,61 @@
+# #
+# 获取当前主机列表
+# 获取当前容器列表
+##
+
+import os
+import sys
 import time
 import json
+import django
 import requests
+sys.path.append('/opt/pigg')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pigg.settings')
+django.setup()
+from pigg.settings import PROMETHEUS_QUERY_VECTOR_URL
+from urllib import parse
 
 
-# 获取主机列表
-def get_nodeExport(topUrl):
+def nodeExport_list():
     current_time = int(time.time())
     hosts = []
-    query_params = 'up{job="node-export"}'
-    url = topUrl + query_params + '&time='.format(current_time)
+    params_limit = parse.quote('{job="node-export"}')
+    query_params = 'up%s' % params_limit
+    url = PROMETHEUS_QUERY_VECTOR_URL + query_params + '&time='.format(current_time)
     resp = requests.get(url)
     dictText = json.loads(resp.text)
-    if dictText.get('status') == 'success':
-        metrics = dictText.get('data').get('result')
-        for metric in metrics:
-            both = dict()
-            both['hostname'] = metric.get('metric').get('instance').split(':')[0]
-            both['isOnLine'] = metric.get('value')[1]
-            hosts.append(both)
-    return hosts  # [{'hostname': '47.92.255.39', 'isOnLine': '1'}, {'hostname': 'localhost', 'isOnLine': '1'}]
+    result = dictText.get('data').get('result')
+    for item in result:
+        instance = item.get('metric').get('instance').split(':')[0]
+        value = item.get('value')[1]
+        data = {'instance': instance, 'isOnLine': value}
+        hosts.append(data)
+    hosts.append({'instance': 'All', 'isOnLine': '1'})
+    return hosts  # [{'instance': '47.92.255.39', 'isOnLine': '1'}, {'instance': 'localhost', 'isOnLine': '1'}]
 
 
-# 获取host下容器列表
-def get_containers(hostname):
-    pass
+# hostname为空时, 获取集群所有容器; 反之获取该主机下的所有容器, 服务依赖cadvisor
+def container_list(hostname=''):
+    current_time = int(time.time())
+    containers = []
+    params_limit = parse.quote("{name=~'.+',instance=~'%s.+'}" % hostname)
+    query_params = "container_last_seen%s" % params_limit
+    url = PROMETHEUS_QUERY_VECTOR_URL + query_params + '&time='.format(current_time)
+    resp = requests.get(url)
+    dictText = json.loads(resp.text)
+    result = dictText.get('data').get('result')
+    for item in result:
+        container = item.get('metric').get('name')
+        instance = item.get('metric').get('instance').split(':')[0]
+        value = item.get('value')[1]
+        isOnLine = int(value) > current_time - 5 * 60                           # 心跳超过5分钟无反应则判定down
+        data = {'instance': instance, 'container': container, 'isOnLine': isOnLine}
+        containers.append(data)
+    return containers
+    # [{'instance': 'localhost', 'container': 'grafana', 'isOnLine': 'True'},
+    # {'instance': '47.92.255.39', 'container': 'node-exporter', 'isOnLine': 'False'}]
 
 
 if __name__ == "__main__":
-    topUrl = 'http://localhost:9090/api/v1/query?query='
-    # 一期工程中，前端要求根据特定主机名查询它自己的数据
-    a = get_nodeExport(topUrl)
+    a = nodeExport_list()
     print(a)

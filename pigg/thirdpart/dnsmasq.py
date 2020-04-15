@@ -10,8 +10,8 @@ from pigg import settings
 # 重启生效
 def restart():
     url = os.path.join(settings.DNS_URL, 'restart')
-    try: 
-        resp = requests.put(url, auth=settings.DNS_BASICAUTH)
+    try:
+        requests.put(url, auth=settings.DNS_BASICAUTH)
     except Exception as e:
         print('DNS服务连接失败:' + str(e))
         return False

@@ -9,63 +9,94 @@
     </swiper-item>
   </block>
 </swiper>
-<view class="page">
+<view class="notice">
+  <image class="notice-img" src="../../resources/pub/icon/notice.gif"></image>
+  <swiper class="tab-right" style='background:{{bgColor}};' vertical="true" autoplay="true" circular="true" interval="5000" display-multiple-items='1'>
+      <block wx:for-index="idx" wx:for='{{notice}}' wx:key="*this">
+        <swiper-item class="swiper-item">
+          <view class='content-item'>
+            <text class='victim'>{{item}}</text>
+          </view>
+        </swiper-item>
+      </block>       
+  </swiper>
+</view>
+<view class="body">
     <!-- 天气 -->
-    <view class="weui-panel weui-panel_access">
-      <view class="weui-panel__hd">所在城市：</view>
-      <view class="weui-panel__bd">
-        <navigator url="" wx:for='{{weatherData}}' wx:key="*this" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-            <image class="weui-media-box__thumb" src="../../resources/app/weather/{{item.img_src}}.png" />
+    <view class="panel__hd"><text class="title"> 所在城市</text></view>
+    <view class="panel__bd">
+      <navigator url="" wx:for='{{weatherData}}' wx:key="*this" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+          <image class="weui-media-box__thumb" src="../../resources/app/weather/{{item.img_src}}.png" />
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view class="weui-media-box__title">{{item.city}}-{{item.week}}-{{item.weather}}</view>
+          <view class="weui-media-box__desc">
+            <text>{{item.date}} {{item.datetime}}</text>
           </view>
-          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-            <view class="weui-media-box__title">{{item.city}}-{{item.week}}-{{item.weather}}</view>
-            <view class="weui-media-box__desc">
-              <text>{{item.date}} {{item.datetime}}</text>
-            </view>
-            <view wx:if='{{item.temperature > 19}}' class="weui-media-box__desc">
-              <text style="color: red">温度：{{item.temperature}}度</text><text> , 天气质量：{{item.quality}}</text>
-            </view>
-            <view wx:else class="weui-media-box__desc">
-              <text style="color: green">温度：{{item.temperature}}度</text><text> , 天气质量：{{item.quality}}</text>
-            </view>
-            <view class="weui-media-box__desc">
-              <text>相对湿度：{{item.humidity}},风向: {{item.wind_direct}}</text>
-            </view>
+          <view wx:if='{{item.temperature > 19}}' class="weui-media-box__desc">
+            <text style="color: red">温度：{{item.temperature}}度</text><text> , 天气质量：{{item.quality}}</text>
           </view>
-        </navigator>
-      </view>
+          <view wx:else class="weui-media-box__desc">
+            <text style="color: green">温度：{{item.temperature}}度</text><text> , 天气质量：{{item.quality}}</text>
+          </view>
+          <view class="weui-media-box__desc">
+            <text>相对湿度：{{item.humidity}},风向: {{item.wind_direct}}</text>
+          </view>
+        </view>
+      </navigator>
     </view>
     <!-- 服务 -->
-    <view class="weui-panel weui-panel_access">
-      <view class="weui-panel__hd">消息公告：</view>
-      <view class="weui-panel__bd">
-        <view class="weui-media-box weui-media-box_text" wx:for='{{}}' wx:key="*this">
-          <view class="weui-media-box__title weui-media-box__title_in-text" wx:if='{{item.is_rising}}'>{{item.name}} (+ {{item.sub}})</view>
-          <view class="weui-media-box__title weui-media-box__title_in-text" wx:else>{{item.name}} (-{{item.sub}})</view>
-          <view>当前：{{item.now_price}}</view>
-          <view class="weui-media-box__info">
-            <view class="weui-media-box__info__meta">最高：{{item.today_max}}</view>
-            <view class="weui-media-box__info__meta">最低：{{item.today_min}}</view>
-            <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">开盘：{{item.start_price}}</view>
+    <view class="">
+      <view class="panel__hd"><text class="title">消息公告</text></view>
+      <view class="panel__bd app_list">
+        <view class="temp">
+          <view class="appContent">
+            <text class="one">弹性容器云</text>
+            <text class="two">采用kubernetes实现Serverless和容器化的弹性服务。</text>
           </view>
+          <image class="appImg" src="../../resources/app/icon_mico-service.png"></image>
+        </view>
+      </view>
+      <view class="panel__bd app_list">
+        <view class="temp">
+          <image class="appImg" src="../../resources/app/icon_attack.png"></image>
+          <view class="appContent rightAppContent">
+            <text class="one right-one">攻击溯源实时监控</text>
+            <text class="two right-two">对密码爆破/SYN flood/刷站等攻击行为进行实时受灾监控。</text>
+          </view>
+        </view>
+      </view>
+      <view class="panel__bd">
+        <view class="temp">
+          <view class="appContent">
+            <text class="one three">容器云监控</text>
+            <text class="two three">助力实现弹性容器云, 在告警触发时, 自动化伸缩容器实例。</text>
+          </view>
+          <image class="appImg" src="../../resources/app/icon_monitor.png"></image>
         </view>
       </view>
     </view>
     <!-- 告警 -->
-    <view class="weui-panel weui-panel_access">
-      <view class="weui-panel__hd">我的告警：</view>
-      <view class="weui-panel__bd">
-        <view class="weui-cells weui-cells_after-title">
-              <view wx:for="{{result}}" wx:key="alter" class="weui-cell weui-cell_example ">
-                  <view class="weui-cell__hd">
-                      <icon class="scan_icon warn-icon" type="warn" size="23" color="#F43530"></icon>
-                  </view>
-                  <view class="weui-cell__bd">{{item.name}}</view>
-                  <view class="weui-cell__ft">{{item.value}}</view>
-              </view>
+    <view class="">
+      <view class="panel__hd"><text class="title">最近告警</text></view>
+      
+      <view wx:for="{{alter}}" wx:key="alter" class="panel__bd">
+        <view class="alter">
+          <view class="alter-content">
+            {{item.content}}
           </view>
+          <view class="alter-label">
+            <text class="label">{{item.host}}</text>
+            <text class="time">{{item.time}}</text>
+          </view>
+        </view>  
       </view>
+    
     </view>
-  
+</view>
+<!--底部声明-->
+<view class="state">
+  <image src="../../resources/pub/icon/icon-icp.png" style="width:16px;height:16px"></image>
+  <text>ICP备案号:粤B2-20030206</text>
 </view>

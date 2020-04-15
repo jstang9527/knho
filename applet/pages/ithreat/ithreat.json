@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "ec-canvas": "../../ec-canvas/ec-canvas"
+  },
+  "navigationBarTitleText": "攻击情报",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#000000"
+}

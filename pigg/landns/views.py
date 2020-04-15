@@ -9,6 +9,7 @@ from authorization.models import User
 from thirdpart import dnsmasq
 from pigg.settings import DNS_CONFIG
 
+
 # 慎用，将遗弃
 def all_record(request):
     query_set = Ldns.objects.all()
@@ -20,6 +21,7 @@ def all_record(request):
     response_data = CommonResponseMixin.wrap_json_response(data=all_dns)
     return JsonResponse(data=response_data, safe=False)
 
+
 # 搜索栏,公共应用
 def query_record(request):
     data = []
@@ -28,7 +30,6 @@ def query_record(request):
     # 包含就算
     dnss = Ldns.objects.filter(domain__contains=domain)
     for dns in dnss:
-        nickname = dns.owner.nickname
         # 加隐私*
         owner = dns.owner.nickname
         owner = ''.join(list(owner)[1:])
@@ -50,7 +51,7 @@ class UserLdns(View, CommonResponseMixin):
         userRecords = user.ldns_set.all()
         data = []
         for userRecord in userRecords:
-            data.append({'domain':userRecord.domain, 'address':userRecord.address})
+            data.append({'domain': userRecord.domain, 'address': userRecord.address})
         response_data = self.wrap_json_response(data=data)
         return JsonResponse(data=response_data, safe=False)
     
@@ -59,7 +60,7 @@ class UserLdns(View, CommonResponseMixin):
             response = self.wrap_json_response(code=ReturnCode.UNAUTHORIZED)
             return JsonResponse(data=response, safe=False)
         
-        received_body = json.loads(request.body)  #{'data': {'domain': 'www.ceshi.com', 'address': '4.3.2.1'}} 
+        received_body = json.loads(request.body)  # {'data': {'domain': 'www.ceshi.com', 'address': '4.3.2.1'}}
         received_body = received_body.get('data')  # {'domain': 'www.ceshi.com', 'address': '4.3.2.1'}
         print(received_body.get('domain'), received_body.get('address'))
         
@@ -93,4 +94,3 @@ class UserLdns(View, CommonResponseMixin):
         response_data = self.wrap_json_response(code=ReturnCode.SUCCESS)
         
         return JsonResponse(data=response_data, safe=False)
-    

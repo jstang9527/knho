@@ -94,11 +94,40 @@ function getDiskGuage(app, hostname){
   })
   return promise
 }
+
+function getCCpuMatrix(app, hostname, interval) {
+  var promise = new Promise(function (resolve, reject) {
+    wx.request({
+      url: app.globalData.serverUrl + app.globalData.apiVersion + '/service/prom/container/cpu_matrix?hostname=' + hostname + '&interval=' + interval,
+      success: function (res) {
+        resolve(res.data.data)
+      },
+      fail: function (res) { resolve() }
+    })
+  })
+  return promise
+}
+
+function getCMemMatrix(app, hostname, interval) {
+  var promise = new Promise(function (resolve, reject) {
+    wx.request({
+      url: app.globalData.serverUrl + app.globalData.apiVersion + '/service/prom/container/mem_matrix?hostname=' + hostname + '&interval=' + interval,
+      success: function (res) {
+        resolve(res.data.data)
+      },
+      fail: function (res) { resolve() }
+    })
+  })
+  return promise
+}
+
 module.exports = {
   getUptime: getUptime,
   getContainers: getContainers,
   getCpuGuage: getCpuGuage,
   getMemGuage: getMemGuage,
   getDiskGuage: getDiskGuage,
-  getCpuloadGuage: getCpuloadGuage
+  getCpuloadGuage: getCpuloadGuage,
+  getCCpuMatrix: getCCpuMatrix,
+  getCMemMatrix: getCMemMatrix
 }

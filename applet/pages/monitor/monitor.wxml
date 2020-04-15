@@ -1,12 +1,29 @@
 <view class="page">
-  <view>
-    <button bindtap="changeHost" style="width:94%;background-color: red;margin: 3%">更新</button>
+  <view class="row-block" style="padding-bottom:0px">
+        <!-- 头部左边栏 -->    
+        <view class="box box-left">  <!--单机-->
+            <view class="top-title">Node:</view>
+            <picker bindchange="bindHostPickerChange" value="{{index}}" range="{{hostList}}">
+              <view class="top-title"><text class="node">{{currentHost}}</text> ▼</view>
+            </picker>
+        </view>  
+        <!--头部右边栏-->
+        <view class="box box-right">
+          <view class="top-title">Time:</view>
+          <picker bindchange="bindTimePickerChange" value="{{index}}" range="{{intervalNameList}}">
+                <view class="top-title"><text class="node">{{currentInterval}}</text> ▼</view>
+          </picker>
+        </view>
   </view>
   <view class="row-block">
-        <!-- 头部左边栏 -->
-        <view class="box box-left">
-            <view class="top-title">Uptime:</view>
+        <!-- 头部左边栏 -->    
+        <view wx:if="{{currentHost!='All'}}" class="box box-left">  <!--单机-->
+            <view class="top-title">Uptiem:</view>
             <view class="top-title">{{uptime}}</view>
+        </view>
+        <view wx:else class="box box-left">  <!--集群-->
+            <view class="top-title">主机数:</view>
+            <view class="top-title">{{hostList.length-1}}</view>
         </view>
         <!--头部右边栏-->
         <view class="box box-right">
@@ -14,6 +31,7 @@
           <view class="top-title">{{cons}}</view>
         </view>
   </view>
+  
   <view class="container-cicle">
       <canvas canvas-id="cpuCanvas" class="canvas"></canvas>
   </view>
@@ -57,12 +75,12 @@
         <!-- 头部左边栏 -->
         <view class="box mem-dis-label-left">
             <view class="top-title">Total:</view>
-            <view class="top-title">{{memTotal}}G</view>
+            <view class="top-title">{{allCircle.memRing.series[0].data+allCircle.memRing.series[1].data}}G</view>
         </view>
         <!--头部右边栏-->
         <view class="box mem-dis-label-right">
           <view class="top-title">Total:</view>
-          <view class="top-title">{{diskTotal}}G</view>
+          <view class="top-title">{{allCircle.diskRing.series[0].data+allCircle.diskRing.series[1].data}}G</view>
         </view>
   </view>
   <!-- 线图 -->
@@ -70,15 +88,16 @@
     <text>CPU Usage per Container</text>
   </view>
   <view class="container-line">
-    <canvas canvas-id="lineCanvas1" disable-scroll="true" class="canvas-line" bindtouchstart="touchHandler"></canvas>
+    <canvas canvas-id="cCpuLine" disable-scroll="true" class="canvas-line" bindtouchstart="touchHandler" data-type="cpu"></canvas>
   </view>
   <view class="cpu-con">
     <text>MEM Usage per Container</text>
   </view>
   <view class="container-line">
-    <canvas canvas-id="lineCanvas2" disable-scroll="true" class="canvas-line" bindtouchstart="touchHandler"></canvas>
+    <canvas canvas-id="cMemLine" disable-scroll="true" class="canvas-line" bindtouchstart="touchHandler" data-type="mem"></canvas>
   </view>
   <view class="cpu-con bottom-lable">
     <text>Power by Prometheus</text>
   </view>
+  
 </view>

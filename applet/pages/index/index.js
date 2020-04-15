@@ -7,25 +7,16 @@ const authUtil = require('../../utils/auth.js')
 Page({
   data: {
     imgUrls: [
-      {
-        link: '',
-        url: '../../resources/tabbar/clamav.png'
-      },
-      {
-        link: '',
-        url: '../../resources/tabbar/kbase.png'
-      },
-      {
-        link: '',
-        url: '../../resources/tabbar/dns.png'
-      },
+      { link: '', url: '../../resources/tabbar/clamav.png' },
+      { link: '', url: '../../resources/tabbar/kbase.png' },
+      { link: '', url: '../../resources/tabbar/dns.png' },
     ],
-    indicatorDots: true, //小点
+    indicatorDots: false, //小点
     indicatorColor: "white",//指示点颜色
     activeColor: "coral",//当前选中的指示点颜色
     autoplay: true, //是否自动轮播
     interval: 5000, //间隔时间
-    duration: 1000, //滑动时间
+    duration: 100, //滑动时间
     result: [
       { //当获取clamd多客户端扫描结果时，会有多条result记录
         name: "clamd",
@@ -47,14 +38,36 @@ Page({
     isAuthorized: false,
     weatherData: null,
     userInfo: null,
-    hasUserInfo: null
+    hasUserInfo: null,
+    notice: ['美国新增确诊超3.2万例 累计逾52万例 所有州进入重大灾难状态','轰炸机、预警机、战斗机编队绕台|解放军真的来了',
+    '深圳发放2亿元消费券 购车最高可补贴1万元',],
+    alter: [
+      {'content': 'clamav容器服务的MEM已超过告警阈值20%, 具体值为847M', 'host': '47.92.255.39', 'time': '2020-04-15T18:03:00'},
+      {'content': '主机zan71.com的Disk已超过告警阈值80%, 具体值为39.65G', 'host': 'zan71.com', 'time': '2020-04-14T20:44:37'},
+      {'content': '主机localhost的CPU已超过告警阈值80%, 具体值为82.62%', 'host': 'localhost', 'time': '2020-04-14T13:18:25'},
+    ]
   },
-  //事件处理函数
-  bindViewTap: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
+  //获取新闻函数
+  pullNews: function() {
+    var that = this
+    wx.request({
+      url: app.globalData.serverUrl + app.globalData.apiVersion + '/service/news/latest',
+      success: function(res) {
+        that.setData({notice: res.data.data})
+      }
     })
   },
+  //获取告警
+  pullAlter: function() {
+    var that = this
+    wx.request({
+      url: app.globalData.serverUrl + app.globalData.apiVersion + '/service/alter',
+      success: function(res) {
+        that.setData({alter: res.data.data})
+      }
+    })
+  },
+  //获取天气函数
   updateData: function () {
     wx.showLoading({ title: '加载中', })
     var that = this
@@ -75,8 +88,8 @@ Page({
       },
       success: function (res) {
         that.setData({ weatherData: res.data.data })
-        wx.hideLoading()
-      }
+      },
+      complete: function() { wx.hideLoading() }
     })
   },
   //下拉刷新,先检查session是否过期，再更新页面数据
@@ -85,42 +98,28 @@ Page({
     that.updateData()
     var promise = authUtil.getStatus(app)
     promise.then(function (status) {
-      if (status) {
-        that.setData({ isAuthorized: true })
-      } else {
+      if (status) { that.setData({ isAuthorized: true }) } 
+      else {
         that.setData({ isAuthorized: false })
-        wx.showToast({
-          title: '请先登陆',
-          icon: 'none'
-        })
+        wx.showToast({ title: '请先登陆', icon: 'none' })
       }
     })
   },
   onLoad: function () {
+    this.pullNews()
+    this.pullAlter()
     this.onPullDownRefresh()
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse) {
+    if (app.globalData.userInfo){ this.setData({ userInfo: app.globalData.userInfo, hasUserInfo: true}) } 
+    else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
+      app.userInfoReadyCallback = res => { this.setData({ userInfo: res.userInfo, hasUserInfo: true }) }
+    } 
+    else { // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
         success: res => {
           app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
+          this.setData({ userInfo: res.userInfo, hasUserInfo: true })
         }
       })
     }
@@ -128,25 +127,6 @@ Page({
   getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+    this.setData({ userInfo: e.detail.userInfo, hasUserInfo: true })
   },
-  teststorage: function (event) {
-    wx.setStorage({
-      key: 'mykey',
-      data: 'mydata',
-    })
-    wx.getStorage({
-      key: 'mykey',
-      success: function (res) {
-        console.log(res.data)
-      },
-    })
-  },
-  onShow: function () {
-    var that = this
-    that.onPullDownRefresh()
-  }
 })

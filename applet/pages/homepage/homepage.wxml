@@ -3,9 +3,10 @@
   <view class="weui-panel weui-panel_access">
     <view class="pagetop">
       <view class="userinfo">
-        <view wx:if="{{!hasUserInfo}}" class="userinfo">
-          <image bindtap="authorize" class="userinfo-avatar" src="../../resources/pub/icon/user.png" mode="cover"></image>
-          <view class='userflag'>点击登录</view> 
+        <view wx:if="{{!isLogin}}" class="userinfo">
+            <image bindtap="" class="userinfo-avatar" src="../../resources/pub/icon/user.png" mode="cover"></image>
+
+          
         </view>
         <block wx:else>
           <image bindtap="getStatusFromRemote" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
@@ -14,9 +15,14 @@
       </view>
       <!--右边栏-->
       <view class="right-box">
-        <view wx:if="{{hasUserInfo}}">
+        <view wx:if="{{isLogin}}">
           <image bindtap="logout" src="../../resources/pub/icon/out.jpg" class="top-right" mode="cover"></image>
           <image data-type='focusCity' bindtap='onNavigatorTap' src="../../resources/pub/icon/in.jpg" class="top-right" mode="cover"></image>
+        </view>
+        <view wx:else>
+          <button style="width: 128rpx; padding: 0px; background-color: green;" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+            <text class='userflag'>授权登录</text> 
+          </button>
         </view>
       </view>
     </view>

@@ -1,0 +1,176 @@
+.page{
+  background-color: black;
+}
+.top-title{
+  /* height: 50px; */
+  width: 100%;
+  background-color: #87CEFA;
+  color: white;
+  font-size: 24px;
+  /* line-height: 48px; */
+  display: flex;
+  justify-content: center;
+}
+.colum{
+  display: flex;
+  flex-direction: column;
+}
+.title{
+  display: flex;
+  justify-content: center;
+}
+.page__desc{
+  font-size: 12px;
+}
+.contentBottom {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #87CEFA;
+}
+.bar{
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 3%;
+}
+.bar-item{
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  line-height: 28px;
+  /* border: 1px solid #663a83; */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.nav_left_items.active{
+  background: white; /* 背景色变成白色 */
+  color: #87CEFA; /* 字体编程蓝色 */
+  /* border-bottom: 3px solid #33ff4e; 设置边框的宽度以及颜色 */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.body{
+  text-align:center;
+  align-items:center;
+  justify-content: center;
+  margin: 5%;
+  width: 90%;
+  /* height: 720px; */
+  background-color: #87CEFA;
+  border-radius: 20px;
+}
+.mico-content{
+  padding-top: 5%;
+}
+.row-item{
+  width: 95%;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  padding: 0px 2% 3% 2%;
+}
+.model{
+  background-color: white;
+  color: #87CEFA;
+  padding: 0px 5% 1% 5%;
+  border-radius: 20px;
+}
+.confim{
+  background-color: green;
+}
+.item-name{
+  width: 30%;
+  /* text-align: justify; */
+  text-align-last:justify;
+}
+.input{
+  width: 70%;
+  border-bottom: 1px solid white;
+}
+.input-slider{
+  border-bottom: none;
+}
+.slider{
+  padding-top: 1%;
+  margin: 0px 0px 0px 10%;
+}
+.textarea{
+  font-size: 12px;
+  line-height: 24px;
+  color: #87CEFA;
+}
+
+/*控制台*/
+/* 2.主盒子 */ 
+.control-container { 
+  width: 100%; /* 宽度占屏幕的100% */
+  height: 100%; /* 高度占屏幕的100% */
+  background-color: #fff; /* 背景颜色 */
+  display: flex;
+}
+/* 3.左盒子*/ 
+ /* 3.1. 左侧栏主盒子总体设置 */ 
+.control-nav_left{ 
+  /* position:absolute; 使用绝对定位 */
+  top:0px; /* 距离上边距：0px */
+  left:0px; /* 距离左边距：0px */
+  width: 25%; /* 每个item所占的宽度 */
+  background: #f5f5f5; /* 主盒子设置背景色为灰色 */ 
+  text-align: center; /* 文字居中显示 */
+}
+/* 3.2. 左侧栏的每个item */ 
+.control-nav_left .control-nav_left_items{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px; /* 每个item高40px*/ 
+  padding: 6px 0; /* 上内边距和下内边距是 6px[增加高度] 右内边距和左内边距是 0px*/
+  border-bottom: 1px solid #dedede; /* 设置下边线 */ 
+  font-size: 14px; /* 设置文字大小：14px */
+} 
+/* 3.3. 左侧栏list的item被选中时*/ 
+.control-nav_left .control-nav_left_items.active{
+  background: white; /* 背景色变成白色 */
+  color: #87CEFA; /* 字体编程蓝色 */
+  border-left: 3px solid #87CEFA; /* 设置边框的宽度以及颜色 */
+}
+/* 4.右盒子 */ 
+/* 4.1. 右侧栏主盒子总体设置 */ 
+.control-nav_right{ 
+  position: relative;
+  top: 0px; /* 距离上边距：0px */
+  /* left: 25%; 距离左边距：25% */
+  width: 75%; /* 右侧主盒子所占宽度 */
+  height: 100%; /* 右侧主盒子所占高度 */
+  padding: 10px; /* 所有 4 个内边距都是 10px*/
+  box-sizing: border-box; /* 为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制*/
+  background: #fff; /* 右侧主盒子背景颜色 */
+}
+
+.article_list{
+  font-size: 14px;
+}
+.control-title{
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  /* justify-content: center; */
+}
+
+/*未完成提示*/
+/* page{
+  background-color: #FFFFFF;
+} */
+.weui-demo-dialog{
+visibility:hidden;
+opacity:0;
+transition:opacity .3s;
+}
+.weui-demo-dialog_show{
+visibility:visible;
+opacity:1;
+}

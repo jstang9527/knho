@@ -16,15 +16,18 @@ class WeatherParse(object):
 
     def parse_weather_now(self, url, headers):
         weather_now = dict()
+        print(url)
         resp = requests.get(url, headers=headers)
         text = resp.text
+        # print(text)
         city = re.findall(r'<dd class="name"><h2>(.*?)</h2>', text, re.DOTALL)[0]
         weather = re.findall(r'<span><b>(.*?)</b>', text, re.DOTALL)[0]
         temperature = re.findall(r'<p class="now"><b>(.*?)</b>', text, re.DOTALL)[0]
         now_time = re.findall(r'<dd class="week">(.*?)</dd>', text, re.DOTALL)[0]
         date = re.findall(r'(.*?)日', now_time)[0] + '日'
         week = '星期' + re.findall(r'星期(.*?)\s', now_time)[0]
-        img_url = 'http://' + re.findall(r'<dd class="weather">\n<i><img src="//(.*?)">', text, re.DOTALL)[0]
+        img_url = 'http://' + re.findall(r'<dd class="weather">.*?<i><img src="//(.*?)"?>', text, re.DOTALL)[0]
+        print(img_url)
         items = re.findall(r'<dd class="shidu"><b>(.*?)</b><b>(.*?)</b><b>(.*?)</b>', text, re.DOTALL)[0]
         nodes = []
         for item in list(items):
@@ -33,8 +36,8 @@ class WeatherParse(object):
         humidity = nodes[0]
         wind_direct = nodes[1]
         ultraviolet_rays = nodes[2]
-        quality = re.findall(r'<dd class="kongqi">.*?：(.*?)</h5>', text, re.DOTALL)[0]
-        PM = re.findall(r'<dd class="kongqi">.*?</h5><h6>PM:(.*?)</h6>', text, re.DOTALL)[0].strip()
+        quality = re.findall(r'<dd class="kongqi" >.*?：(.*?)</h5>', text, re.DOTALL)[0]
+        PM = re.findall(r'<dd class="kongqi" >.*?PM: (.*?)</h6>', text, re.DOTALL)[0]
         # print('城市：%s\t气温：%s℃\t%s\t 日期：%s\t 湿度：%s\t风西：%s\t紫外线：%s\t天气：%s\t天气质量：%s\tPM：%s'
         #       % (city, temperature, week, date, humidity, wind_direct, ultraviolet_rays, weather, quality, PM))
         # print('imgUrl：%s' % img_url)
@@ -100,9 +103,11 @@ class WeatherParse(object):
         future = self.parse_weather_7(url, self.Headers, city)
         return future
 
-# w = WeatherParse()
-# now = w.get_weather_now('深圳')
-# future = w.get_future_weather('上海')
-# print(now)
-# print('===' * 40 + '\n')
-# print(future)
+
+if __name__ == "__main__":
+    w = WeatherParse()
+    now = w.get_weather_now('深圳')
+    # future = w.get_future_weather('上海')
+    print(now)
+    # print('===' * 40 + '\n')
+    # print(future)

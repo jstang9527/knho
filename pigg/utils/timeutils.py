@@ -1,3 +1,4 @@
+import time
 import datetime
 
 
@@ -24,6 +25,19 @@ def get_month_left_in_second():
     left = next_month_zero - now
     print(left)
     return int(left.total_seconds())
+
+
+def standard_time(year, month, day, sfm):
+    '''
+    @parmas sfm: 时分秒
+    转成可以给DateTimeFiled赋值的日期时间格式
+    :return:
+    '''
+    str_time = str(year) + '/' + str(month) + '/' + str(day) + ' ' + sfm
+    struct_time = time.strptime(str_time, '%Y/%b/%d %H:%M:%S')
+    t = time.mktime(struct_time)
+    t = datetime.datetime.fromtimestamp(t)
+    return t
 
 
 if __name__ == '__main__':

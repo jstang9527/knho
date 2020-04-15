@@ -21,7 +21,7 @@ class Article(models.Model):
     # 文章摘要
     brief_content = models.TextField()
     # 文章的主要内容
-    content = models.TextField()    
+    content = models.TextField()
     # 文章的发布日期
     # publish_date = models.DateTimeField(auto_now=True)
     publish_date = models.DateTimeField()
@@ -31,6 +31,7 @@ class Article(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     # 分类
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+
     def to_dict(self):
         return {
             'article_id': self.article_id,

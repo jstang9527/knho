@@ -14,7 +14,9 @@
     "pages/blog/blog",
     "pages/article/article",
     "pages/test/test",
-    "pages/monitor/monitor"
+    "pages/monitor/monitor",
+    "pages/ithreat/ithreat",
+    "pages/mico/mico"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -25,7 +27,7 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/test/test",
+        "pagePath": "pages/index/index",
         "text": "测试页",
         "iconPath": "resources/tabbar/page-index.png",
         "selectedIconPath": "resources/tabbar/page-index-color.png"

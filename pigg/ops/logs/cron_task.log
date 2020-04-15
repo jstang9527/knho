@@ -1,0 +1,651 @@
+/usr/local/python3/lib/python3.7/site-packages/celery/platforms.py:801: RuntimeWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+[2020-04-14 19:20:54,222: INFO/MainProcess] Connected to redis://localhost:6379//
+[2020-04-14 19:20:54,230: INFO/MainProcess] mingle: searching for neighbors
+[2020-04-14 19:20:55,256: INFO/MainProcess] mingle: all alone
+[2020-04-14 19:20:55,267: INFO/MainProcess] celery@python3 ready.
+[2020-04-14 19:20:57,118: INFO/MainProcess] Received task: cron_tasks.test.add[a4dd68b2-9f76-48d5-874a-83b26e1563a3]  
+/usr/local/python3/lib/python3.7/site-packages/celery/platforms.py:801: RuntimeWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+[2020-04-14 19:20:57,119: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:20:57,125: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[a4dd68b2-9f76-48d5-874a-83b26e1563a3] succeeded in 0.006256508990190923s: True
+[2020-04-14 19:21:00,118: INFO/MainProcess] Received task: cron_tasks.test.add[324f3984-2cdf-4ddd-8e3a-aef434792e4a]  
+[2020-04-14 19:21:00,119: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:21:00,120: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[324f3984-2cdf-4ddd-8e3a-aef434792e4a] succeeded in 0.0009672330343164504s: True
+[2020-04-14 19:21:03,118: INFO/MainProcess] Received task: cron_tasks.test.add[d7c88eb2-dff7-4755-8fb6-3c718ef029d3]  
+[2020-04-14 19:21:03,118: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:21:03,119: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[d7c88eb2-dff7-4755-8fb6-3c718ef029d3] succeeded in 0.000887097034137696s: True
+[2020-04-14 19:21:06,118: INFO/MainProcess] Received task: cron_tasks.test.add[2c1c5363-f3a3-4bf7-af6a-0eb8c8e2f8af]  
+[2020-04-14 19:21:06,119: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:21:06,120: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[2c1c5363-f3a3-4bf7-af6a-0eb8c8e2f8af] succeeded in 0.0010330050135962665s: True
+[2020-04-14 19:21:09,118: INFO/MainProcess] Received task: cron_tasks.test.add[0bee4e36-1764-4f17-9003-0d4cb1375b9e]  
+[2020-04-14 19:21:09,119: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:21:09,120: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[0bee4e36-1764-4f17-9003-0d4cb1375b9e] succeeded in 0.0013837279984727502s: True
+[2020-04-14 19:21:12,117: INFO/MainProcess] Received task: cron_tasks.test.add[dfc04017-e2a5-4c33-87e8-fcd579c5a6db]  
+[2020-04-14 19:21:12,118: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:21:12,119: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[dfc04017-e2a5-4c33-87e8-fcd579c5a6db] succeeded in 0.0010320540168322623s: True
+[2020-04-14 19:21:15,117: INFO/MainProcess] Received task: cron_tasks.test.add[e8584c0c-1723-42e3-9b1b-be50e7438e25]  
+[2020-04-14 19:21:15,118: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:21:15,119: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[e8584c0c-1723-42e3-9b1b-be50e7438e25] succeeded in 0.0013365399790927768s: True
+[2020-04-14 19:21:18,118: INFO/MainProcess] Received task: cron_tasks.test.add[bb6c00ac-4d97-4133-87f1-75ea6ebd5fd7]  
+[2020-04-14 19:21:18,118: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:21:18,120: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[bb6c00ac-4d97-4133-87f1-75ea6ebd5fd7] succeeded in 0.0012196829775348306s: True
+[2020-04-14 19:21:21,118: INFO/MainProcess] Received task: cron_tasks.test.add[eb1cc819-266e-4954-970b-7acd4d29b82b]  
+[2020-04-14 19:21:21,119: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:21:21,120: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[eb1cc819-266e-4954-970b-7acd4d29b82b] succeeded in 0.0014456560020335019s: True
+[2020-04-14 19:23:27,119: INFO/MainProcess] Received task: cron_tasks.test.add[625b02c8-7d68-4d52-9346-4fc12f4617ef]  
+[2020-04-14 19:23:27,120: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:23:27,121: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[625b02c8-7d68-4d52-9346-4fc12f4617ef] succeeded in 0.0011473139747977257s: True
+[2020-04-14 19:23:30,119: INFO/MainProcess] Received task: cron_tasks.test.add[a6b58617-e574-4534-a1d9-7dd8cc66dc25]  
+[2020-04-14 19:23:30,119: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:23:30,121: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[a6b58617-e574-4534-a1d9-7dd8cc66dc25] succeeded in 0.0013157599605619907s: True
+[2020-04-14 19:23:33,119: INFO/MainProcess] Received task: cron_tasks.test.add[c9e8cf0d-2ce0-47b7-9947-0a0e3de2d204]  
+[2020-04-14 19:23:33,120: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:23:33,121: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[c9e8cf0d-2ce0-47b7-9947-0a0e3de2d204] succeeded in 0.0008556469692848623s: True
+[2020-04-14 19:23:36,119: INFO/MainProcess] Received task: cron_tasks.test.add[61cdd135-63a5-41b4-98d9-970ee47147a2]  
+[2020-04-14 19:23:36,119: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:23:36,120: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[61cdd135-63a5-41b4-98d9-970ee47147a2] succeeded in 0.0008439940284006298s: True
+[2020-04-14 19:23:39,119: INFO/MainProcess] Received task: cron_tasks.test.add[087909f0-5d56-4647-bfe0-1dffc7595ee6]  
+[2020-04-14 19:23:39,120: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:23:39,122: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[087909f0-5d56-4647-bfe0-1dffc7595ee6] succeeded in 0.0017778250039555132s: True
+[2020-04-14 19:23:42,119: INFO/MainProcess] Received task: cron_tasks.test.add[a6df6a0b-cc1a-43c2-9352-1f5aa465e291]  
+[2020-04-14 19:23:42,120: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:23:42,122: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[a6df6a0b-cc1a-43c2-9352-1f5aa465e291] succeeded in 0.0025700770202092826s: True
+[2020-04-14 19:23:45,119: INFO/MainProcess] Received task: cron_tasks.test.add[f468f7ce-154f-412f-900b-6cdb5cf2af7c]  
+[2020-04-14 19:23:45,120: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:23:45,121: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[f468f7ce-154f-412f-900b-6cdb5cf2af7c] succeeded in 0.001081686990801245s: True
+[2020-04-14 19:23:48,119: INFO/MainProcess] Received task: cron_tasks.test.add[21d2a41a-a34a-4d7a-a9a8-1d75b7c18a4f]  
+[2020-04-14 19:23:48,120: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:23:48,121: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[21d2a41a-a34a-4d7a-a9a8-1d75b7c18a4f] succeeded in 0.0009492040262557566s: True
+[2020-04-14 19:23:51,119: INFO/MainProcess] Received task: cron_tasks.test.add[6d97637b-c550-4572-b9a5-e1ae4dc6f559]  
+[2020-04-14 19:23:51,120: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:23:51,120: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[6d97637b-c550-4572-b9a5-e1ae4dc6f559] succeeded in 0.0005566810141317546s: True
+[2020-04-14 19:23:54,121: INFO/MainProcess] Received task: cron_tasks.test.add[907ea78c-154b-4d29-adeb-4c075c4bac7a]  
+[2020-04-14 19:23:54,122: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:23:54,123: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[907ea78c-154b-4d29-adeb-4c075c4bac7a] succeeded in 0.0011771140270866454s: True
+[2020-04-14 19:23:57,120: INFO/MainProcess] Received task: cron_tasks.test.add[9dae591d-93cf-450b-9186-e80f1bbf44bd]  
+[2020-04-14 19:23:57,120: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:23:57,121: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[9dae591d-93cf-450b-9186-e80f1bbf44bd] succeeded in 0.0010500960052013397s: True
+[2020-04-14 19:24:00,119: INFO/MainProcess] Received task: cron_tasks.test.add[2cf4f449-fee2-4d95-b380-cccaa79dbfcc]  
+[2020-04-14 19:24:00,120: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:24:00,122: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[2cf4f449-fee2-4d95-b380-cccaa79dbfcc] succeeded in 0.0014987100148573518s: True
+[2020-04-14 19:24:03,119: INFO/MainProcess] Received task: cron_tasks.test.add[c013b009-42f7-4ab8-944e-9f9d73c18ab8]  
+[2020-04-14 19:24:03,120: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:24:03,120: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[c013b009-42f7-4ab8-944e-9f9d73c18ab8] succeeded in 0.0006520329625345767s: True
+[2020-04-14 19:24:06,120: INFO/MainProcess] Received task: cron_tasks.test.add[dd5be003-70c4-4310-bf9b-3acd8870b749]  
+[2020-04-14 19:24:06,120: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:24:06,122: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[dd5be003-70c4-4310-bf9b-3acd8870b749] succeeded in 0.0012818080140277743s: True
+[2020-04-14 19:24:09,119: INFO/MainProcess] Received task: cron_tasks.test.add[4280228d-80e8-4886-9ba8-aa26200949a0]  
+[2020-04-14 19:24:09,120: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:24:09,121: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[4280228d-80e8-4886-9ba8-aa26200949a0] succeeded in 0.00132568902336061s: True
+[2020-04-14 19:24:12,121: INFO/MainProcess] Received task: cron_tasks.test.add[daee7fb0-3c58-4570-bb86-930441ca4a14]  
+[2020-04-14 19:24:12,122: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:24:12,123: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[daee7fb0-3c58-4570-bb86-930441ca4a14] succeeded in 0.001571059983689338s: True
+[2020-04-14 19:24:15,119: INFO/MainProcess] Received task: cron_tasks.test.add[ae336dfd-1bec-4e7f-802c-06046053c8c8]  
+[2020-04-14 19:24:15,120: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:24:15,121: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[ae336dfd-1bec-4e7f-802c-06046053c8c8] succeeded in 0.0008547269972041249s: True
+[2020-04-14 19:24:18,130: INFO/MainProcess] Received task: cron_tasks.test.add[56303fbc-4410-442d-a87c-da503370eef6]  
+[2020-04-14 19:24:18,131: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:24:18,132: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[56303fbc-4410-442d-a87c-da503370eef6] succeeded in 0.0012151009868830442s: True
+[2020-04-14 19:24:21,120: INFO/MainProcess] Received task: cron_tasks.test.add[f923dab6-af8c-473d-95ff-79b997e344ce]  
+[2020-04-14 19:24:21,121: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:24:21,122: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[f923dab6-af8c-473d-95ff-79b997e344ce] succeeded in 0.0014945169677957892s: True
+[2020-04-14 19:24:24,120: INFO/MainProcess] Received task: cron_tasks.test.add[e1971a8d-cabe-4b1b-8038-182b047de90b]  
+[2020-04-14 19:24:24,121: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:24:24,122: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[e1971a8d-cabe-4b1b-8038-182b047de90b] succeeded in 0.0012245300458744168s: True
+[2020-04-14 19:24:27,121: INFO/MainProcess] Received task: cron_tasks.test.add[32121310-9242-42a2-beac-e5fc6427a394]  
+[2020-04-14 19:24:27,122: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:24:27,123: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[32121310-9242-42a2-beac-e5fc6427a394] succeeded in 0.0014527800376527011s: True
+[2020-04-14 19:24:30,120: INFO/MainProcess] Received task: cron_tasks.test.add[b375a162-0000-4cb6-b659-bb5edaf6e267]  
+[2020-04-14 19:24:30,121: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:24:30,122: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[b375a162-0000-4cb6-b659-bb5edaf6e267] succeeded in 0.001185679982881993s: True
+[2020-04-14 19:24:33,120: INFO/MainProcess] Received task: cron_tasks.test.add[464e71b4-65b6-47a1-9c4b-e9eec2008516]  
+[2020-04-14 19:24:33,121: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:24:33,122: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[464e71b4-65b6-47a1-9c4b-e9eec2008516] succeeded in 0.000740804011002183s: True
+[2020-04-14 19:24:36,120: INFO/MainProcess] Received task: cron_tasks.test.add[ec01b7eb-4082-4f94-b500-18ab79e17cac]  
+[2020-04-14 19:24:36,121: WARNING/ForkPoolWorker-2] hahaha
+[2020-04-14 19:24:36,122: INFO/ForkPoolWorker-2] Task cron_tasks.test.add[ec01b7eb-4082-4f94-b500-18ab79e17cac] succeeded in 0.0008868389995768666s: True
+
+worker: Warm shutdown (MainProcess)
+ 
+ -------------- celery@python3 v4.4.1 (cliffs)
+--- ***** ----- 
+-- ******* ---- Linux-3.10.0-693.el7.x86_64-x86_64-with-centos-7.4.1708-Core 2020-04-14 19:20:54
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         cron_tasks:0x7f508212b0b8
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     redis://localhost/
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . cron_tasks.test.add
+
+/usr/local/python3/lib/python3.7/site-packages/celery/platforms.py:801: RuntimeWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+[2020-04-14 19:26:16,065: INFO/MainProcess] Connected to redis://localhost:6379//
+[2020-04-14 19:26:16,076: INFO/MainProcess] mingle: searching for neighbors
+[2020-04-14 19:26:17,110: INFO/MainProcess] mingle: all alone
+[2020-04-14 19:26:17,125: INFO/MainProcess] celery@python3 ready.
+[2020-04-14 19:26:17,135: INFO/MainProcess] pidbox: Connected to redis://localhost:6379//.
+[2020-04-14 19:26:17,438: INFO/MainProcess] Received task: cron_tasks.tasks.add[80826f1a-23fa-4109-8efa-02c32c477c27]  
+[2020-04-14 19:26:17,438: WARNING/MainProcess] hahaha
+[2020-04-14 19:26:17,440: INFO/MainProcess] Task cron_tasks.tasks.add[80826f1a-23fa-4109-8efa-02c32c477c27] succeeded in 0.0019463470089249313s: True
+[2020-04-14 19:26:57,713: INFO/MainProcess] Received task: cron_tasks.tasks.add[05d205ca-ea67-4d90-8674-4be46dc05c8e]  
+[2020-04-14 19:26:57,714: WARNING/MainProcess] hahaha
+[2020-04-14 19:26:57,714: INFO/MainProcess] Task cron_tasks.tasks.add[05d205ca-ea67-4d90-8674-4be46dc05c8e] succeeded in 0.0006599019980058074s: True
+[2020-04-14 19:27:00,713: INFO/MainProcess] Received task: cron_tasks.tasks.add[dd361bd7-18cc-4d89-abbc-48f7207d6bfd]  
+[2020-04-14 19:27:00,714: WARNING/MainProcess] hahaha
+[2020-04-14 19:27:00,715: INFO/MainProcess] Task cron_tasks.tasks.add[dd361bd7-18cc-4d89-abbc-48f7207d6bfd] succeeded in 0.001099240966141224s: True
+[2020-04-14 19:27:03,713: INFO/MainProcess] Received task: cron_tasks.tasks.add[cf445c27-d1ed-4589-9d0d-5a8bd2ce87a1]  
+[2020-04-14 19:27:03,713: WARNING/MainProcess] hahaha
+[2020-04-14 19:27:03,715: INFO/MainProcess] Task cron_tasks.tasks.add[cf445c27-d1ed-4589-9d0d-5a8bd2ce87a1] succeeded in 0.0014188570203259587s: True
+[2020-04-14 19:27:06,713: INFO/MainProcess] Received task: cron_tasks.tasks.add[3e193d2b-8a68-4ca2-950f-876b4337b788]  
+[2020-04-14 19:27:06,713: WARNING/MainProcess] hahaha
+[2020-04-14 19:27:06,715: INFO/MainProcess] Task cron_tasks.tasks.add[3e193d2b-8a68-4ca2-950f-876b4337b788] succeeded in 0.0012036440311931074s: True
+[2020-04-14 19:27:09,713: INFO/MainProcess] Received task: cron_tasks.tasks.add[234b90d3-a473-48f6-bc27-882ae98fc7a0]  
+[2020-04-14 19:27:09,713: WARNING/MainProcess] hahaha
+[2020-04-14 19:27:09,714: INFO/MainProcess] Task cron_tasks.tasks.add[234b90d3-a473-48f6-bc27-882ae98fc7a0] succeeded in 0.0012048519565723836s: True
+[2020-04-14 19:27:12,713: INFO/MainProcess] Received task: cron_tasks.tasks.add[9d1482e8-a576-4a7f-8300-f7db4eaa02e0]  
+[2020-04-14 19:27:12,713: WARNING/MainProcess] hahaha
+[2020-04-14 19:27:12,715: INFO/MainProcess] Task cron_tasks.tasks.add[9d1482e8-a576-4a7f-8300-f7db4eaa02e0] succeeded in 0.0012251519947312772s: True
+[2020-04-14 19:27:15,712: INFO/MainProcess] Received task: cron_tasks.tasks.add[038bb253-fa21-48f8-b67b-6dc4a37319b1]  
+[2020-04-14 19:27:15,713: WARNING/MainProcess] hahaha
+[2020-04-14 19:27:15,714: INFO/MainProcess] Task cron_tasks.tasks.add[038bb253-fa21-48f8-b67b-6dc4a37319b1] succeeded in 0.0009627209510654211s: True
+[2020-04-14 19:27:18,713: INFO/MainProcess] Received task: cron_tasks.tasks.add[23c228a7-1b07-4789-a281-5053de314551]  
+[2020-04-14 19:27:18,713: WARNING/MainProcess] hahaha
+[2020-04-14 19:27:18,714: INFO/MainProcess] Task cron_tasks.tasks.add[23c228a7-1b07-4789-a281-5053de314551] succeeded in 0.0009273199830204248s: True
+[2020-04-14 19:27:21,713: INFO/MainProcess] Received task: cron_tasks.tasks.add[fb044200-8b31-4e02-8ca9-4cb4acd2c749]  
+[2020-04-14 19:27:21,713: WARNING/MainProcess] hahaha
+[2020-04-14 19:27:21,714: INFO/MainProcess] Task cron_tasks.tasks.add[fb044200-8b31-4e02-8ca9-4cb4acd2c749] succeeded in 0.0012965979985892773s: True
+[2020-04-14 19:27:24,713: INFO/MainProcess] Received task: cron_tasks.tasks.add[c5463327-c5e6-4ccb-ae03-109109db21dc]  
+[2020-04-14 19:27:24,714: WARNING/MainProcess] hahaha
+[2020-04-14 19:27:24,716: INFO/MainProcess] Task cron_tasks.tasks.add[c5463327-c5e6-4ccb-ae03-109109db21dc] succeeded in 0.0020132719655521214s: True
+[2020-04-14 19:27:27,712: INFO/MainProcess] Received task: cron_tasks.tasks.add[81a24a18-483d-43bb-bf49-cf800daa1896]  
+[2020-04-14 19:27:27,713: WARNING/MainProcess] hahaha
+[2020-04-14 19:27:27,714: INFO/MainProcess] Task cron_tasks.tasks.add[81a24a18-483d-43bb-bf49-cf800daa1896] succeeded in 0.0013877489836886525s: True
+[2020-04-14 19:27:30,713: INFO/MainProcess] Received task: cron_tasks.tasks.add[fc56feb2-4563-45f1-bdc2-d7318d15f9c3]  
+[2020-04-14 19:27:30,714: WARNING/MainProcess] hahaha
+[2020-04-14 19:27:30,715: INFO/MainProcess] Task cron_tasks.tasks.add[fc56feb2-4563-45f1-bdc2-d7318d15f9c3] succeeded in 0.0017107099993154407s: True
+[2020-04-14 19:27:33,713: INFO/MainProcess] Received task: cron_tasks.tasks.add[cd4530ce-ce1b-406d-bc82-aa19ff472ce2]  
+[2020-04-14 19:27:33,713: WARNING/MainProcess] hahaha
+[2020-04-14 19:27:33,714: INFO/MainProcess] Task cron_tasks.tasks.add[cd4530ce-ce1b-406d-bc82-aa19ff472ce2] succeeded in 0.0009947079815901816s: True
+[2020-04-14 19:27:36,713: INFO/MainProcess] Received task: cron_tasks.tasks.add[696b2ce7-7376-45f8-9253-c7349ff77253]  
+[2020-04-14 19:27:36,713: WARNING/MainProcess] hahaha
+[2020-04-14 19:27:36,714: INFO/MainProcess] Task cron_tasks.tasks.add[696b2ce7-7376-45f8-9253-c7349ff77253] succeeded in 0.0009934519766829908s: True
+[2020-04-14 19:27:39,713: INFO/MainProcess] Received task: cron_tasks.tasks.add[4f3598c2-9592-46b1-8d25-0e6f64a2c1d9]  
+[2020-04-14 19:27:39,713: WARNING/MainProcess] hahaha
+[2020-04-14 19:27:39,715: INFO/MainProcess] Task cron_tasks.tasks.add[4f3598c2-9592-46b1-8d25-0e6f64a2c1d9] succeeded in 0.0012128189555369318s: True
+[2020-04-14 19:27:42,713: INFO/MainProcess] Received task: cron_tasks.tasks.add[d495cabf-c8a5-4874-9cbe-dcefe5fb403c]  
+[2020-04-14 19:27:42,714: WARNING/MainProcess] hahaha
+[2020-04-14 19:27:42,715: INFO/MainProcess] Task cron_tasks.tasks.add[d495cabf-c8a5-4874-9cbe-dcefe5fb403c] succeeded in 0.0010717369732446969s: True
+[2020-04-14 19:27:45,713: INFO/MainProcess] Received task: cron_tasks.tasks.add[a372d2e9-b360-4613-a18a-33f578cc0c91]  
+[2020-04-14 19:27:45,714: WARNING/MainProcess] hahaha
+[2020-04-14 19:27:45,715: INFO/MainProcess] Task cron_tasks.tasks.add[a372d2e9-b360-4613-a18a-33f578cc0c91] succeeded in 0.001345497032161802s: True
+[2020-04-14 19:27:48,713: INFO/MainProcess] Received task: cron_tasks.tasks.add[1caa982a-5e47-48ad-8d7b-bac2931eb75a]  
+[2020-04-14 19:27:48,714: WARNING/MainProcess] hahaha
+[2020-04-14 19:27:48,715: INFO/MainProcess] Task cron_tasks.tasks.add[1caa982a-5e47-48ad-8d7b-bac2931eb75a] succeeded in 0.0009444879833608866s: True
+[2020-04-14 19:27:51,713: INFO/MainProcess] Received task: cron_tasks.tasks.add[ccb53331-87f6-4447-88e0-196637dd3f36]  
+[2020-04-14 19:27:51,713: WARNING/MainProcess] hahaha
+[2020-04-14 19:27:51,714: INFO/MainProcess] Task cron_tasks.tasks.add[ccb53331-87f6-4447-88e0-196637dd3f36] succeeded in 0.0010330770164728165s: True
+[2020-04-14 19:27:54,713: INFO/MainProcess] Received task: cron_tasks.tasks.add[d6d14f7a-fc03-4a77-8f3d-4b3f0004afbd]  
+[2020-04-14 19:27:54,713: WARNING/MainProcess] hahaha
+[2020-04-14 19:27:54,714: INFO/MainProcess] Task cron_tasks.tasks.add[d6d14f7a-fc03-4a77-8f3d-4b3f0004afbd] succeeded in 0.0007000889745540917s: True
+[2020-04-14 19:27:57,713: INFO/MainProcess] Received task: cron_tasks.tasks.add[deac99d5-be9d-474d-8756-9376ee9c5524]  
+
+worker: Warm shutdown (MainProcess)
+[2020-04-14 19:27:58,293: WARNING/MainProcess] Restoring 1 unacknowledged message(s)
+/usr/local/python3/lib/python3.7/site-packages/celery/platforms.py:801: RuntimeWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+[2020-04-14 20:13:51,473: INFO/MainProcess] Connected to redis://localhost:6379//
+[2020-04-14 20:13:51,481: INFO/MainProcess] mingle: searching for neighbors
+[2020-04-14 20:13:52,605: INFO/MainProcess] mingle: all alone
+[2020-04-14 20:13:52,623: WARNING/MainProcess] /usr/local/python3/lib/python3.7/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  leak, never use this setting in production environments!''')
+[2020-04-14 20:13:52,623: INFO/MainProcess] celery@python3 ready.
+[2020-04-14 20:13:52,624: INFO/MainProcess] pidbox: Connected to redis://localhost:6379//.
+[2020-04-14 20:13:52,908: INFO/MainProcess] Received task: cron_tasks.tasks.add[ed5f65e6-f314-4098-bdb4-a5c5114c4215]  
+[2020-04-14 20:13:52,910: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 20:13:52,911: INFO/MainProcess] Task cron_tasks.tasks.add[ed5f65e6-f314-4098-bdb4-a5c5114c4215] succeeded in 0.0020270590321160853s: True
+[2020-04-14 20:18:51,436: INFO/MainProcess] Received task: cron_tasks.tasks.add[b256fe83-ed93-4024-9c7c-0a2a0981adf4]  
+[2020-04-14 20:18:51,437: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 20:18:51,439: INFO/MainProcess] Task cron_tasks.tasks.add[b256fe83-ed93-4024-9c7c-0a2a0981adf4] succeeded in 0.0017104180296882987s: True
+[2020-04-14 20:23:51,500: INFO/MainProcess] Received task: cron_tasks.tasks.add[63cc511b-95e8-4232-8045-a56d13185149]  
+[2020-04-14 20:23:51,502: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 20:23:51,503: INFO/MainProcess] Task cron_tasks.tasks.add[63cc511b-95e8-4232-8045-a56d13185149] succeeded in 0.0018978150328621268s: True
+
+worker: Warm shutdown (MainProcess)
+/usr/local/python3/lib/python3.7/site-packages/celery/platforms.py:801: RuntimeWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+[2020-04-14 20:41:29,677: INFO/MainProcess] Connected to redis://localhost:6379//
+[2020-04-14 20:41:29,685: INFO/MainProcess] mingle: searching for neighbors
+[2020-04-14 20:41:30,707: INFO/MainProcess] mingle: all alone
+[2020-04-14 20:41:30,719: INFO/MainProcess] pidbox: Connected to redis://localhost:6379//.
+[2020-04-14 20:41:30,722: WARNING/MainProcess] /usr/local/python3/lib/python3.7/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  leak, never use this setting in production environments!''')
+[2020-04-14 20:41:30,723: INFO/MainProcess] celery@python3 ready.
+[2020-04-14 20:43:51,768: INFO/MainProcess] Received task: cron_tasks.tasks.add[ff0ed808-9e06-4c07-a963-044e909c362a]  
+[2020-04-14 20:43:51,863: WARNING/MainProcess] wrap_socket() got an unexpected keyword argument '_context'
+[2020-04-14 20:43:52,104: WARNING/MainProcess] wrap_socket() got an unexpected keyword argument '_context'
+[2020-04-14 20:43:52,269: WARNING/MainProcess] wrap_socket() got an unexpected keyword argument '_context'
+[2020-04-14 20:43:52,407: WARNING/MainProcess] 1
+[2020-04-14 20:43:52,440: WARNING/MainProcess] wrap_socket() got an unexpected keyword argument '_context'
+[2020-04-14 20:43:52,597: WARNING/MainProcess] wrap_socket() got an unexpected keyword argument '_context'
+[2020-04-14 20:43:52,731: WARNING/MainProcess] 1
+[2020-04-14 20:43:52,750: WARNING/MainProcess] wrap_socket() got an unexpected keyword argument '_context'
+[2020-04-14 20:43:52,887: WARNING/MainProcess] 2
+[2020-04-14 20:43:52,911: WARNING/MainProcess] wrap_socket() got an unexpected keyword argument '_context'
+[2020-04-14 20:43:53,046: WARNING/MainProcess] 3
+[2020-04-14 20:43:53,064: WARNING/MainProcess] wrap_socket() got an unexpected keyword argument '_context'
+[2020-04-14 20:43:53,236: WARNING/MainProcess] wrap_socket() got an unexpected keyword argument '_context'
+[2020-04-14 20:43:53,445: WARNING/MainProcess] wrap_socket() got an unexpected keyword argument '_context'
+[2020-04-14 20:43:53,608: WARNING/MainProcess] wrap_socket() got an unexpected keyword argument '_context'
+[2020-04-14 20:43:53,830: ERROR/MainProcess] Task cron_tasks.tasks.add[ff0ed808-9e06-4c07-a963-044e909c362a] raised unexpected: JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.7/site-packages/celery/app/trace.py", line 385, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/python3/lib/python3.7/site-packages/celery/app/trace.py", line 650, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/opt/pigg/celery_tasks/cron_tasks/tasks.py", line 17, in add
+    sshd.sshd_attack_record_toDB()
+  File "/opt/pigg/ops/analysis/sshd.py", line 74, in sshd_attack_record_toDB
+    attack_area = __get_ip_address(attack_ip)
+  File "/opt/pigg/ops/analysis/sshd.py", line 41, in __get_ip_address
+    return saip.queryAddress(ip)
+  File "/opt/pigg/thirdpart/saip.py", line 18, in queryAddress
+    data = json.loads(resp.text)
+  File "/usr/local/python3/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/usr/local/python3/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/local/python3/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+worker: Warm shutdown (MainProcess)
+/usr/local/python3/lib/python3.7/site-packages/celery/platforms.py:801: RuntimeWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+[2020-04-14 20:53:05,377: INFO/MainProcess] Connected to redis://localhost:6379//
+[2020-04-14 20:53:05,384: INFO/MainProcess] mingle: searching for neighbors
+[2020-04-14 20:53:06,407: INFO/MainProcess] mingle: all alone
+[2020-04-14 20:53:06,417: WARNING/MainProcess] /usr/local/python3/lib/python3.7/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  leak, never use this setting in production environments!''')
+[2020-04-14 20:53:06,418: INFO/MainProcess] celery@python3 ready.
+[2020-04-14 20:53:06,424: INFO/MainProcess] pidbox: Connected to redis://localhost:6379//.
+[2020-04-14 20:58:52,009: INFO/MainProcess] Received task: cron_tasks.tasks.add[763e2b15-6cb5-4cea-a6cf-62e0b48b72cf]  
+[2020-04-14 20:58:52,010: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 20:58:52,013: INFO/MainProcess] Task cron_tasks.tasks.add[763e2b15-6cb5-4cea-a6cf-62e0b48b72cf] succeeded in 0.0034854330006055534s: True
+[2020-04-14 21:08:52,150: INFO/MainProcess] Received task: cron_tasks.tasks.add[6fe1e781-4205-4d10-a00e-e10111400b6e]  
+[2020-04-14 21:08:52,150: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 21:08:52,152: INFO/MainProcess] Task cron_tasks.tasks.add[6fe1e781-4205-4d10-a00e-e10111400b6e] succeeded in 0.0014531330089084804s: True
+[2020-04-14 21:13:52,240: INFO/MainProcess] Received task: cron_tasks.tasks.add[c2957153-8ca9-4d9b-a236-64934fa1183d]  
+[2020-04-14 21:13:52,240: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 21:13:52,241: INFO/MainProcess] Task cron_tasks.tasks.add[c2957153-8ca9-4d9b-a236-64934fa1183d] succeeded in 0.0012708549620583653s: True
+[2020-04-14 21:18:52,328: INFO/MainProcess] Received task: cron_tasks.tasks.add[7b315066-ba05-4695-b555-84c65bb34c6b]  
+[2020-04-14 21:18:52,329: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 21:18:52,330: INFO/MainProcess] Task cron_tasks.tasks.add[7b315066-ba05-4695-b555-84c65bb34c6b] succeeded in 0.0014040539972484112s: True
+[2020-04-14 21:23:52,407: INFO/MainProcess] Received task: cron_tasks.tasks.add[409c8273-525e-4922-86ff-0a783b072deb]  
+[2020-04-14 21:23:52,409: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 21:23:52,411: INFO/MainProcess] Task cron_tasks.tasks.add[409c8273-525e-4922-86ff-0a783b072deb] succeeded in 0.002823424991220236s: True
+[2020-04-14 21:33:52,534: INFO/MainProcess] Received task: cron_tasks.tasks.add[1b54d21b-f4eb-49ee-8491-0da456740b97]  
+[2020-04-14 21:33:52,535: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 21:33:52,536: INFO/MainProcess] Task cron_tasks.tasks.add[1b54d21b-f4eb-49ee-8491-0da456740b97] succeeded in 0.0014243119512684643s: True
+[2020-04-14 21:38:52,653: INFO/MainProcess] Received task: cron_tasks.tasks.add[fc4d22ad-8947-49df-9e9f-500cf09c60ee]  
+[2020-04-14 21:38:52,840: WARNING/MainProcess] wrap_socket() got an unexpected keyword argument '_context'
+[2020-04-14 21:38:53,110: WARNING/MainProcess] wrap_socket() got an unexpected keyword argument '_context'
+[2020-04-14 21:38:53,269: WARNING/MainProcess] 2
+[2020-04-14 21:38:53,318: WARNING/MainProcess] wrap_socket() got an unexpected keyword argument '_context'
+[2020-04-14 21:38:53,447: WARNING/MainProcess] 3
+[2020-04-14 21:38:53,467: WARNING/MainProcess] wrap_socket() got an unexpected keyword argument '_context'
+[2020-04-14 21:38:53,614: WARNING/MainProcess] 4
+[2020-04-14 21:38:53,636: WARNING/MainProcess] wrap_socket() got an unexpected keyword argument '_context'
+[2020-04-14 21:38:53,767: WARNING/MainProcess] 5
+[2020-04-14 21:38:53,784: WARNING/MainProcess] wrap_socket() got an unexpected keyword argument '_context'
+[2020-04-14 21:38:53,913: WARNING/MainProcess] 6
+[2020-04-14 21:38:53,931: WARNING/MainProcess] wrap_socket() got an unexpected keyword argument '_context'
+[2020-04-14 21:38:54,061: WARNING/MainProcess] 7
+[2020-04-14 21:38:54,080: WARNING/MainProcess] wrap_socket() got an unexpected keyword argument '_context'
+[2020-04-14 21:38:55,216: WARNING/MainProcess] 1
+[2020-04-14 21:38:55,233: WARNING/MainProcess] wrap_socket() got an unexpected keyword argument '_context'
+[2020-04-14 21:38:55,360: WARNING/MainProcess] 1
+[2020-04-14 21:38:55,382: WARNING/MainProcess] wrap_socket() got an unexpected keyword argument '_context'
+[2020-04-14 21:38:55,515: WARNING/MainProcess] 1
+[2020-04-14 21:38:55,535: WARNING/MainProcess] wrap_socket() got an unexpected keyword argument '_context'
+[2020-04-14 21:38:55,651: ERROR/MainProcess] Task cron_tasks.tasks.add[fc4d22ad-8947-49df-9e9f-500cf09c60ee] raised unexpected: JSONDecodeError('Expecting value: line 1 column 1 (char 0)')
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.7/site-packages/celery/app/trace.py", line 385, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/python3/lib/python3.7/site-packages/celery/app/trace.py", line 650, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/opt/pigg/celery_tasks/cron_tasks/tasks.py", line 17, in add
+    sshd.sshd_attack_record_toDB()
+  File "/opt/pigg/ops/analysis/sshd.py", line 74, in sshd_attack_record_toDB
+    attack_area = __get_ip_address(attack_ip)
+  File "/opt/pigg/ops/analysis/sshd.py", line 41, in __get_ip_address
+    return saip.queryAddress(ip)
+  File "/opt/pigg/thirdpart/saip.py", line 18, in queryAddress
+    data = json.loads(resp.text)
+  File "/usr/local/python3/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/usr/local/python3/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/local/python3/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2020-04-14 21:43:52,712: INFO/MainProcess] Received task: cron_tasks.tasks.add[99e53309-156a-4b91-8767-a8f8b0f55e93]  
+[2020-04-14 21:43:52,713: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 21:43:52,714: INFO/MainProcess] Task cron_tasks.tasks.add[99e53309-156a-4b91-8767-a8f8b0f55e93] succeeded in 0.001504330022726208s: True
+[2020-04-14 21:53:52,889: INFO/MainProcess] Received task: cron_tasks.tasks.add[e46ba051-ffb3-4577-9de0-66be6cb02358]  
+[2020-04-14 21:53:52,890: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 21:53:52,891: INFO/MainProcess] Task cron_tasks.tasks.add[e46ba051-ffb3-4577-9de0-66be6cb02358] succeeded in 0.00143531896173954s: True
+[2020-04-14 21:58:52,964: INFO/MainProcess] Received task: cron_tasks.tasks.add[e599531a-0cb8-4403-925a-c140956b4e5b]  
+[2020-04-14 21:58:52,965: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 21:58:52,966: INFO/MainProcess] Task cron_tasks.tasks.add[e599531a-0cb8-4403-925a-c140956b4e5b] succeeded in 0.001509083027485758s: True
+[2020-04-14 22:03:53,050: INFO/MainProcess] Received task: cron_tasks.tasks.add[40ef6557-994a-4210-848f-9cab2c5cd597]  
+[2020-04-14 22:03:53,051: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 22:03:53,052: INFO/MainProcess] Task cron_tasks.tasks.add[40ef6557-994a-4210-848f-9cab2c5cd597] succeeded in 0.0014064200222492218s: True
+[2020-04-14 22:23:53,319: INFO/MainProcess] Received task: cron_tasks.tasks.add[9c054518-01a5-4d80-9bcb-ceaf0c91d04f]  
+[2020-04-14 22:23:53,320: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 22:23:53,323: INFO/MainProcess] Task cron_tasks.tasks.add[9c054518-01a5-4d80-9bcb-ceaf0c91d04f] succeeded in 0.0033303580130450428s: True
+[2020-04-14 22:43:53,599: INFO/MainProcess] Received task: cron_tasks.tasks.add[fa19ae80-30b7-4bad-9a9e-863fdd8fb36a]  
+[2020-04-14 22:43:53,600: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 22:43:53,601: INFO/MainProcess] Task cron_tasks.tasks.add[fa19ae80-30b7-4bad-9a9e-863fdd8fb36a] succeeded in 0.0013462959905155003s: True
+[2020-04-14 22:48:53,675: INFO/MainProcess] Received task: cron_tasks.tasks.add[6c191568-369d-400c-b8f5-196bb926827d]  
+[2020-04-14 22:48:53,676: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 22:48:53,677: INFO/MainProcess] Task cron_tasks.tasks.add[6c191568-369d-400c-b8f5-196bb926827d] succeeded in 0.0012190569541417062s: True
+[2020-04-14 22:53:53,766: INFO/MainProcess] Received task: cron_tasks.tasks.add[25b2f84e-4c8e-40ce-8710-2baa39f43093]  
+[2020-04-14 22:53:53,767: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 22:53:53,768: INFO/MainProcess] Task cron_tasks.tasks.add[25b2f84e-4c8e-40ce-8710-2baa39f43093] succeeded in 0.0012449549976736307s: True
+[2020-04-14 22:58:53,852: INFO/MainProcess] Received task: cron_tasks.tasks.add[1a8feb0c-01c4-42eb-ae52-1da6f621e75d]  
+[2020-04-14 22:58:53,853: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 22:58:53,854: INFO/MainProcess] Task cron_tasks.tasks.add[1a8feb0c-01c4-42eb-ae52-1da6f621e75d] succeeded in 0.0012103089829906821s: True
+[2020-04-14 23:18:54,184: INFO/MainProcess] Received task: cron_tasks.tasks.add[3434ae0a-9c4c-4161-88f3-92025b34d78b]  
+[2020-04-14 23:18:54,186: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 23:18:54,188: INFO/MainProcess] Task cron_tasks.tasks.add[3434ae0a-9c4c-4161-88f3-92025b34d78b] succeeded in 0.0025907379458658397s: True
+[2020-04-14 23:23:54,271: INFO/MainProcess] Received task: cron_tasks.tasks.add[83f8a3bc-f7b9-490e-9cac-c6f3599e516e]  
+[2020-04-14 23:23:54,272: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 23:23:54,273: INFO/MainProcess] Task cron_tasks.tasks.add[83f8a3bc-f7b9-490e-9cac-c6f3599e516e] succeeded in 0.0017833230085670948s: True
+[2020-04-14 23:28:54,345: INFO/MainProcess] Received task: cron_tasks.tasks.add[64833242-8481-480d-ba66-633e8f141748]  
+[2020-04-14 23:28:54,346: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 23:28:54,348: INFO/MainProcess] Task cron_tasks.tasks.add[64833242-8481-480d-ba66-633e8f141748] succeeded in 0.0022863459889777005s: True
+[2020-04-14 23:33:54,363: INFO/MainProcess] Received task: cron_tasks.tasks.add[360b9c63-195e-4e8e-833e-ae16c9b478d2]  
+[2020-04-14 23:33:54,363: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 23:33:54,364: INFO/MainProcess] Task cron_tasks.tasks.add[360b9c63-195e-4e8e-833e-ae16c9b478d2] succeeded in 0.0011117790127173066s: True
+[2020-04-14 23:48:54,612: INFO/MainProcess] Received task: cron_tasks.tasks.add[6c7fa404-dfe8-43bc-8c3a-294fb5d6681b]  
+[2020-04-14 23:48:54,613: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 23:48:54,614: INFO/MainProcess] Task cron_tasks.tasks.add[6c7fa404-dfe8-43bc-8c3a-294fb5d6681b] succeeded in 0.0013358389842323959s: True
+[2020-04-14 23:53:54,700: INFO/MainProcess] Received task: cron_tasks.tasks.add[a63ec79b-b6ac-4311-ad46-6bf8ec49ee5b]  
+[2020-04-14 23:53:54,701: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 23:53:54,702: INFO/MainProcess] Task cron_tasks.tasks.add[a63ec79b-b6ac-4311-ad46-6bf8ec49ee5b] succeeded in 0.0013582229730673134s: True
+[2020-04-14 23:58:54,778: INFO/MainProcess] Received task: cron_tasks.tasks.add[58e329b4-710f-4beb-a02b-6f8eda7c7fe6]  
+[2020-04-14 23:58:54,778: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-14 23:58:54,780: INFO/MainProcess] Task cron_tasks.tasks.add[58e329b4-710f-4beb-a02b-6f8eda7c7fe6] succeeded in 0.0013788059586659074s: True
+[2020-04-15 00:03:54,865: INFO/MainProcess] Received task: cron_tasks.tasks.add[704ddfa9-4f79-4110-9435-c31fe6edf317]  
+[2020-04-15 00:03:54,865: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 00:03:54,868: INFO/MainProcess] Task cron_tasks.tasks.add[704ddfa9-4f79-4110-9435-c31fe6edf317] succeeded in 0.0028145809774287045s: True
+[2020-04-15 00:08:54,953: INFO/MainProcess] Received task: cron_tasks.tasks.add[a4394b71-800e-426d-beac-3be5c41fad65]  
+[2020-04-15 00:08:54,954: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 00:08:54,956: INFO/MainProcess] Task cron_tasks.tasks.add[a4394b71-800e-426d-beac-3be5c41fad65] succeeded in 0.0020453929901123047s: True
+[2020-04-15 00:13:55,039: INFO/MainProcess] Received task: cron_tasks.tasks.add[42182f02-f96b-4d7b-b8b0-bde722746cbd]  
+[2020-04-15 00:13:55,040: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 00:13:55,042: INFO/MainProcess] Task cron_tasks.tasks.add[42182f02-f96b-4d7b-b8b0-bde722746cbd] succeeded in 0.0016470010159537196s: True
+[2020-04-15 00:18:55,131: INFO/MainProcess] Received task: cron_tasks.tasks.add[09be1790-840b-4054-bc88-9d30a8c20d88]  
+[2020-04-15 00:18:55,132: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 00:18:55,133: INFO/MainProcess] Task cron_tasks.tasks.add[09be1790-840b-4054-bc88-9d30a8c20d88] succeeded in 0.0018062299932353199s: True
+[2020-04-15 00:38:55,354: INFO/MainProcess] Received task: cron_tasks.tasks.add[fe6f9ef7-1000-4022-92ef-e11404b2a5c1]  
+[2020-04-15 00:38:55,355: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 00:38:55,356: INFO/MainProcess] Task cron_tasks.tasks.add[fe6f9ef7-1000-4022-92ef-e11404b2a5c1] succeeded in 0.001469651993829757s: True
+[2020-04-15 00:53:55,584: INFO/MainProcess] Received task: cron_tasks.tasks.add[dbf9deb5-286a-4040-8d01-310d2c6fe1b9]  
+[2020-04-15 00:53:55,585: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 00:53:55,585: INFO/MainProcess] Task cron_tasks.tasks.add[dbf9deb5-286a-4040-8d01-310d2c6fe1b9] succeeded in 0.0010729240020737052s: True
+[2020-04-15 00:58:55,667: INFO/MainProcess] Received task: cron_tasks.tasks.add[2b867393-807c-47ab-8c7b-f7c438f3ab62]  
+[2020-04-15 00:58:55,668: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 00:58:55,672: INFO/MainProcess] Task cron_tasks.tasks.add[2b867393-807c-47ab-8c7b-f7c438f3ab62] succeeded in 0.004296341969165951s: True
+[2020-04-15 01:03:55,738: INFO/MainProcess] Received task: cron_tasks.tasks.add[a7a1eb74-dd65-4c4b-b0fc-a91aa4083aad]  
+[2020-04-15 01:03:55,739: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 01:03:55,740: INFO/MainProcess] Task cron_tasks.tasks.add[a7a1eb74-dd65-4c4b-b0fc-a91aa4083aad] succeeded in 0.001551372988615185s: True
+[2020-04-15 01:08:55,797: INFO/MainProcess] Received task: cron_tasks.tasks.add[3feabd5a-0388-4a9e-9694-a18dedee5e0c]  
+[2020-04-15 01:08:55,798: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 01:08:55,800: INFO/MainProcess] Task cron_tasks.tasks.add[3feabd5a-0388-4a9e-9694-a18dedee5e0c] succeeded in 0.0020487199653871357s: True
+[2020-04-15 01:13:55,870: INFO/MainProcess] Received task: cron_tasks.tasks.add[6cb79864-a0c8-40d5-a851-936a203d1c67]  
+[2020-04-15 01:13:55,871: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 01:13:55,872: INFO/MainProcess] Task cron_tasks.tasks.add[6cb79864-a0c8-40d5-a851-936a203d1c67] succeeded in 0.001350299979094416s: True
+[2020-04-15 01:18:55,944: INFO/MainProcess] Received task: cron_tasks.tasks.add[758c24dc-5aa0-4578-9f46-df07dbc4fc19]  
+[2020-04-15 01:18:55,944: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 01:18:55,946: INFO/MainProcess] Task cron_tasks.tasks.add[758c24dc-5aa0-4578-9f46-df07dbc4fc19] succeeded in 0.001702359993942082s: True
+[2020-04-15 01:23:56,021: INFO/MainProcess] Received task: cron_tasks.tasks.add[80b632fc-7c8c-4224-91ee-ed710b665027]  
+[2020-04-15 01:23:56,022: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 01:23:56,023: INFO/MainProcess] Task cron_tasks.tasks.add[80b632fc-7c8c-4224-91ee-ed710b665027] succeeded in 0.0013542529777623713s: True
+[2020-04-15 01:28:56,101: INFO/MainProcess] Received task: cron_tasks.tasks.add[627b39d7-de22-4fb8-ae40-e082d7c02d62]  
+[2020-04-15 01:28:56,102: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 01:28:56,106: INFO/MainProcess] Task cron_tasks.tasks.add[627b39d7-de22-4fb8-ae40-e082d7c02d62] succeeded in 0.004219050984829664s: True
+[2020-04-15 01:33:56,174: INFO/MainProcess] Received task: cron_tasks.tasks.add[c1c949cb-509b-40c8-bf9e-f66ba3de983c]  
+[2020-04-15 01:33:56,175: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 01:33:56,177: INFO/MainProcess] Task cron_tasks.tasks.add[c1c949cb-509b-40c8-bf9e-f66ba3de983c] succeeded in 0.0025494269793853164s: True
+[2020-04-15 01:58:56,569: INFO/MainProcess] Received task: cron_tasks.tasks.add[1e643568-bab8-4fba-9287-475294fd8470]  
+[2020-04-15 01:58:56,570: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 01:58:56,571: INFO/MainProcess] Task cron_tasks.tasks.add[1e643568-bab8-4fba-9287-475294fd8470] succeeded in 0.0019189830054529011s: True
+[2020-04-15 02:03:56,615: INFO/MainProcess] Received task: cron_tasks.tasks.add[a26b7840-979f-491e-8f9e-02568888e7f8]  
+[2020-04-15 02:03:56,616: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 02:03:56,617: INFO/MainProcess] Task cron_tasks.tasks.add[a26b7840-979f-491e-8f9e-02568888e7f8] succeeded in 0.0009504129993729293s: True
+[2020-04-15 02:28:56,987: INFO/MainProcess] Received task: cron_tasks.tasks.add[67bd1f37-7e3e-4a6c-9372-d52ec6bed7ab]  
+[2020-04-15 02:28:56,987: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 02:28:56,990: INFO/MainProcess] Task cron_tasks.tasks.add[67bd1f37-7e3e-4a6c-9372-d52ec6bed7ab] succeeded in 0.00270963303046301s: True
+[2020-04-15 02:33:57,079: INFO/MainProcess] Received task: cron_tasks.tasks.add[68bf965a-7712-4ac2-9fc6-4b8f9c0bda87]  
+[2020-04-15 02:33:57,080: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 02:33:57,081: INFO/MainProcess] Task cron_tasks.tasks.add[68bf965a-7712-4ac2-9fc6-4b8f9c0bda87] succeeded in 0.0017762870411388576s: True
+[2020-04-15 02:38:57,161: INFO/MainProcess] Received task: cron_tasks.tasks.add[d3c06d7c-08ae-4842-9431-ed69bf557343]  
+[2020-04-15 02:38:57,162: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 02:38:57,164: INFO/MainProcess] Task cron_tasks.tasks.add[d3c06d7c-08ae-4842-9431-ed69bf557343] succeeded in 0.002625828026793897s: True
+[2020-04-15 02:43:57,236: INFO/MainProcess] Received task: cron_tasks.tasks.add[f33390e9-736d-47af-9380-1bbbf865894d]  
+[2020-04-15 02:43:57,237: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 02:43:57,238: INFO/MainProcess] Task cron_tasks.tasks.add[f33390e9-736d-47af-9380-1bbbf865894d] succeeded in 0.001456308993510902s: True
+[2020-04-15 02:58:57,371: INFO/MainProcess] Received task: cron_tasks.tasks.add[4740a12e-c8b1-4bae-9548-82ade2a4227c]  
+[2020-04-15 02:58:57,372: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 02:58:57,374: INFO/MainProcess] Task cron_tasks.tasks.add[4740a12e-c8b1-4bae-9548-82ade2a4227c] succeeded in 0.002019239997025579s: True
+[2020-04-15 03:13:57,521: INFO/MainProcess] Received task: cron_tasks.tasks.add[b63777eb-9147-47e4-abd6-3f2f63abddc0]  
+[2020-04-15 03:13:57,522: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 03:13:57,526: INFO/MainProcess] Task cron_tasks.tasks.add[b63777eb-9147-47e4-abd6-3f2f63abddc0] succeeded in 0.0035430349525995553s: True
+[2020-04-15 03:23:57,679: INFO/MainProcess] Received task: cron_tasks.tasks.add[ad032449-1c79-41c1-a8d9-86774ab79c72]  
+[2020-04-15 03:23:57,680: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 03:23:57,681: INFO/MainProcess] Task cron_tasks.tasks.add[ad032449-1c79-41c1-a8d9-86774ab79c72] succeeded in 0.0015770450117997825s: True
+[2020-04-15 03:28:57,766: INFO/MainProcess] Received task: cron_tasks.tasks.add[7af67ca1-e6e0-436e-98d8-68567f07eb36]  
+[2020-04-15 03:28:57,767: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 03:28:57,768: INFO/MainProcess] Task cron_tasks.tasks.add[7af67ca1-e6e0-436e-98d8-68567f07eb36] succeeded in 0.0014370860299095511s: True
+[2020-04-15 03:43:57,985: INFO/MainProcess] Received task: cron_tasks.tasks.add[9fcd4dc6-8e1e-4e89-af84-e06faa5417b4]  
+[2020-04-15 03:43:57,985: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 03:43:57,988: INFO/MainProcess] Task cron_tasks.tasks.add[9fcd4dc6-8e1e-4e89-af84-e06faa5417b4] succeeded in 0.002404158003628254s: True
+[2020-04-15 03:48:58,060: INFO/MainProcess] Received task: cron_tasks.tasks.add[fb7c3a6d-831c-4249-8774-f525bfecfaf5]  
+[2020-04-15 03:48:58,061: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 03:48:58,063: INFO/MainProcess] Task cron_tasks.tasks.add[fb7c3a6d-831c-4249-8774-f525bfecfaf5] succeeded in 0.001989962998777628s: True
+[2020-04-15 04:08:58,399: INFO/MainProcess] Received task: cron_tasks.tasks.add[795583a7-07fa-4f8e-ab6d-8705d827c800]  
+[2020-04-15 04:08:58,400: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 04:08:58,402: INFO/MainProcess] Task cron_tasks.tasks.add[795583a7-07fa-4f8e-ab6d-8705d827c800] succeeded in 0.0024820059770718217s: True
+[2020-04-15 04:13:58,465: INFO/MainProcess] Received task: cron_tasks.tasks.add[8fcfd952-0ba2-42a5-91e9-b7707bbaad0d]  
+[2020-04-15 04:13:58,466: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 04:13:58,467: INFO/MainProcess] Task cron_tasks.tasks.add[8fcfd952-0ba2-42a5-91e9-b7707bbaad0d] succeeded in 0.001458110986277461s: True
+[2020-04-15 04:18:58,550: INFO/MainProcess] Received task: cron_tasks.tasks.add[01c228a9-07de-4295-8be2-abadb852ed4b]  
+[2020-04-15 04:18:58,551: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 04:18:58,552: INFO/MainProcess] Task cron_tasks.tasks.add[01c228a9-07de-4295-8be2-abadb852ed4b] succeeded in 0.0015044299652799964s: True
+[2020-04-15 04:23:58,603: INFO/MainProcess] Received task: cron_tasks.tasks.add[8adb8153-5051-4aa9-9ba4-76deff053ac8]  
+[2020-04-15 04:23:58,605: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 04:23:58,607: INFO/MainProcess] Task cron_tasks.tasks.add[8adb8153-5051-4aa9-9ba4-76deff053ac8] succeeded in 0.002026439004112035s: True
+[2020-04-15 04:43:58,915: INFO/MainProcess] Received task: cron_tasks.tasks.add[4812d790-7e6a-4267-803c-35e814b2b953]  
+[2020-04-15 04:43:58,915: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 04:43:58,918: INFO/MainProcess] Task cron_tasks.tasks.add[4812d790-7e6a-4267-803c-35e814b2b953] succeeded in 0.0022763980086892843s: True
+[2020-04-15 04:48:59,000: INFO/MainProcess] Received task: cron_tasks.tasks.add[8e2af20e-5e44-4bba-a540-184c2d371e78]  
+[2020-04-15 04:48:59,001: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 04:48:59,002: INFO/MainProcess] Task cron_tasks.tasks.add[8e2af20e-5e44-4bba-a540-184c2d371e78] succeeded in 0.001351282000541687s: True
+[2020-04-15 04:53:59,081: INFO/MainProcess] Received task: cron_tasks.tasks.add[702b1a59-ae6c-430a-a9e8-ccf6b876fd7b]  
+[2020-04-15 04:53:59,082: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 04:53:59,083: INFO/MainProcess] Task cron_tasks.tasks.add[702b1a59-ae6c-430a-a9e8-ccf6b876fd7b] succeeded in 0.0013158840010873973s: True
+[2020-04-15 04:58:59,142: INFO/MainProcess] Received task: cron_tasks.tasks.add[e63db8b8-5ca7-49a0-86bb-1543209ce59b]  
+[2020-04-15 04:58:59,142: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 04:58:59,144: INFO/MainProcess] Task cron_tasks.tasks.add[e63db8b8-5ca7-49a0-86bb-1543209ce59b] succeeded in 0.0013684360310435295s: True
+[2020-04-15 05:18:59,414: INFO/MainProcess] Received task: cron_tasks.tasks.add[4368377b-f587-49ed-90bd-7745d4c09f41]  
+[2020-04-15 05:18:59,415: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 05:18:59,417: INFO/MainProcess] Task cron_tasks.tasks.add[4368377b-f587-49ed-90bd-7745d4c09f41] succeeded in 0.00165125000057742s: True
+[2020-04-15 05:28:59,587: INFO/MainProcess] Received task: cron_tasks.tasks.add[d10f139e-7dbb-4875-b719-823aa1ef12b5]  
+[2020-04-15 05:28:59,588: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 05:28:59,590: INFO/MainProcess] Task cron_tasks.tasks.add[d10f139e-7dbb-4875-b719-823aa1ef12b5] succeeded in 0.002435514994431287s: True
+[2020-04-15 05:33:59,676: INFO/MainProcess] Received task: cron_tasks.tasks.add[1fb12e93-782b-4523-80cb-8415fb57eca5]  
+[2020-04-15 05:33:59,677: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 05:33:59,677: INFO/MainProcess] Task cron_tasks.tasks.add[1fb12e93-782b-4523-80cb-8415fb57eca5] succeeded in 0.0009456860134378076s: True
+[2020-04-15 05:38:59,734: INFO/MainProcess] Received task: cron_tasks.tasks.add[7e41866c-1cef-4c44-b67b-98e9db61c713]  
+[2020-04-15 05:38:59,735: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 05:38:59,736: INFO/MainProcess] Task cron_tasks.tasks.add[7e41866c-1cef-4c44-b67b-98e9db61c713] succeeded in 0.0012592110433615744s: True
+[2020-04-15 05:48:59,861: INFO/MainProcess] Received task: cron_tasks.tasks.add[72a41066-9360-44d4-93b8-6d5fa84809f4]  
+[2020-04-15 05:48:59,861: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 05:48:59,862: INFO/MainProcess] Task cron_tasks.tasks.add[72a41066-9360-44d4-93b8-6d5fa84809f4] succeeded in 0.0010810350067913532s: True
+[2020-04-15 05:53:59,923: INFO/MainProcess] Received task: cron_tasks.tasks.add[ff6946d7-a1c3-495c-884e-632376d0526b]  
+[2020-04-15 05:53:59,926: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 05:53:59,928: INFO/MainProcess] Task cron_tasks.tasks.add[ff6946d7-a1c3-495c-884e-632376d0526b] succeeded in 0.0033019690308719873s: True
+[2020-04-15 05:58:59,967: INFO/MainProcess] Received task: cron_tasks.tasks.add[67c3e4b0-0315-458c-9d8d-c9731576c201]  
+[2020-04-15 05:58:59,968: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 05:58:59,970: INFO/MainProcess] Task cron_tasks.tasks.add[67c3e4b0-0315-458c-9d8d-c9731576c201] succeeded in 0.0020396990003064275s: True
+[2020-04-15 06:04:00,016: INFO/MainProcess] Received task: cron_tasks.tasks.add[09eebe67-e3f9-4a90-8aea-93036cdb742f]  
+[2020-04-15 06:04:00,016: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 06:04:00,018: INFO/MainProcess] Task cron_tasks.tasks.add[09eebe67-e3f9-4a90-8aea-93036cdb742f] succeeded in 0.0014935630024410784s: True
+[2020-04-15 06:09:00,077: INFO/MainProcess] Received task: cron_tasks.tasks.add[699d5085-66dd-42f6-81e3-96ca2fb3518a]  
+[2020-04-15 06:09:00,078: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 06:09:00,079: INFO/MainProcess] Task cron_tasks.tasks.add[699d5085-66dd-42f6-81e3-96ca2fb3518a] succeeded in 0.0011091729975305498s: True
+[2020-04-15 06:14:00,159: INFO/MainProcess] Received task: cron_tasks.tasks.add[37a1080c-fae4-487f-b6f6-cb96fb5987d0]  
+[2020-04-15 06:14:00,159: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 06:14:00,160: INFO/MainProcess] Task cron_tasks.tasks.add[37a1080c-fae4-487f-b6f6-cb96fb5987d0] succeeded in 0.0012422680156305432s: True
+[2020-04-15 06:19:00,203: INFO/MainProcess] Received task: cron_tasks.tasks.add[8f286d7d-4bf1-49dc-800a-8100c71400af]  
+[2020-04-15 06:19:00,205: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 06:19:00,207: INFO/MainProcess] Task cron_tasks.tasks.add[8f286d7d-4bf1-49dc-800a-8100c71400af] succeeded in 0.0022719689877703786s: True
+[2020-04-15 06:24:00,287: INFO/MainProcess] Received task: cron_tasks.tasks.add[23506b44-ff72-4d30-a592-ec4f13685bdf]  
+[2020-04-15 06:24:00,287: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 06:24:00,289: INFO/MainProcess] Task cron_tasks.tasks.add[23506b44-ff72-4d30-a592-ec4f13685bdf] succeeded in 0.001737299025990069s: True
+[2020-04-15 06:29:00,426: INFO/MainProcess] Received task: cron_tasks.tasks.add[e4417696-d21e-4f1c-980d-fc948d1f9951]  
+[2020-04-15 06:29:00,428: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 06:29:00,431: INFO/MainProcess] Task cron_tasks.tasks.add[e4417696-d21e-4f1c-980d-fc948d1f9951] succeeded in 0.0037111399578861892s: True
+[2020-04-15 06:44:00,546: INFO/MainProcess] Received task: cron_tasks.tasks.add[d0a8ac40-3f97-4744-bc19-4205a2526e5f]  
+[2020-04-15 06:44:00,547: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 06:44:00,549: INFO/MainProcess] Task cron_tasks.tasks.add[d0a8ac40-3f97-4744-bc19-4205a2526e5f] succeeded in 0.0024458320112898946s: True
+[2020-04-15 06:49:00,620: INFO/MainProcess] Received task: cron_tasks.tasks.add[dbf4970d-3ec1-4bd9-9750-35f0d52876a5]  
+[2020-04-15 06:49:00,622: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 06:49:00,625: INFO/MainProcess] Task cron_tasks.tasks.add[dbf4970d-3ec1-4bd9-9750-35f0d52876a5] succeeded in 0.0036918200203217566s: True
+[2020-04-15 07:04:00,840: INFO/MainProcess] Received task: cron_tasks.tasks.add[06e1a032-a516-445a-9d3a-2a95a6677845]  
+[2020-04-15 07:04:00,842: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 07:04:00,843: INFO/MainProcess] Task cron_tasks.tasks.add[06e1a032-a516-445a-9d3a-2a95a6677845] succeeded in 0.002067855035420507s: True
+[2020-04-15 07:09:00,903: INFO/MainProcess] Received task: cron_tasks.tasks.add[13cd4a91-318f-4c9f-86ce-7e05ed745ddb]  
+[2020-04-15 07:09:00,904: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 07:09:00,905: INFO/MainProcess] Task cron_tasks.tasks.add[13cd4a91-318f-4c9f-86ce-7e05ed745ddb] succeeded in 0.0015436200192198157s: True
+[2020-04-15 07:29:01,193: INFO/MainProcess] Received task: cron_tasks.tasks.add[0c00f6a1-5332-48c2-b336-c143664ca0e3]  
+[2020-04-15 07:29:01,195: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 07:29:01,196: INFO/MainProcess] Task cron_tasks.tasks.add[0c00f6a1-5332-48c2-b336-c143664ca0e3] succeeded in 0.0015116379945538938s: True
+[2020-04-15 07:34:01,277: INFO/MainProcess] Received task: cron_tasks.tasks.add[3f46d00e-1fa2-446b-82f8-4963b354d4c6]  
+[2020-04-15 07:34:01,278: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 07:34:01,279: INFO/MainProcess] Task cron_tasks.tasks.add[3f46d00e-1fa2-446b-82f8-4963b354d4c6] succeeded in 0.001751656993292272s: True
+[2020-04-15 07:39:01,366: INFO/MainProcess] Received task: cron_tasks.tasks.add[6f83ddfe-852b-4a85-8d74-25f78ff5e2da]  
+[2020-04-15 07:39:01,367: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 07:39:01,368: INFO/MainProcess] Task cron_tasks.tasks.add[6f83ddfe-852b-4a85-8d74-25f78ff5e2da] succeeded in 0.00132206198759377s: True
+[2020-04-15 07:44:01,451: INFO/MainProcess] Received task: cron_tasks.tasks.add[80f040a6-770d-47bf-b2c6-65bad16c5356]  
+[2020-04-15 07:44:01,452: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 07:44:01,453: INFO/MainProcess] Task cron_tasks.tasks.add[80f040a6-770d-47bf-b2c6-65bad16c5356] succeeded in 0.0013943309895694256s: True
+[2020-04-15 07:59:01,654: INFO/MainProcess] Received task: cron_tasks.tasks.add[23079e40-7355-4e3e-95db-da736518fe6c]  
+[2020-04-15 07:59:01,656: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 07:59:01,658: INFO/MainProcess] Task cron_tasks.tasks.add[23079e40-7355-4e3e-95db-da736518fe6c] succeeded in 0.002681521000340581s: True
+[2020-04-15 08:04:01,734: INFO/MainProcess] Received task: cron_tasks.tasks.add[58213ee6-98ef-445c-8125-beb1bb8f4b9c]  
+[2020-04-15 08:04:01,735: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 08:04:01,736: INFO/MainProcess] Task cron_tasks.tasks.add[58213ee6-98ef-445c-8125-beb1bb8f4b9c] succeeded in 0.0014867049758322537s: True
+[2020-04-15 08:09:01,824: INFO/MainProcess] Received task: cron_tasks.tasks.add[9e1201ee-67aa-4440-9c22-396c427157f7]  
+[2020-04-15 08:09:01,825: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 08:09:01,826: INFO/MainProcess] Task cron_tasks.tasks.add[9e1201ee-67aa-4440-9c22-396c427157f7] succeeded in 0.001793651026673615s: True
+[2020-04-15 08:14:01,886: INFO/MainProcess] Received task: cron_tasks.tasks.add[728e3d3b-748b-426b-af00-921c0052c726]  
+[2020-04-15 08:14:01,887: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 08:14:01,889: INFO/MainProcess] Task cron_tasks.tasks.add[728e3d3b-748b-426b-af00-921c0052c726] succeeded in 0.0020677699940279126s: True
+[2020-04-15 08:34:02,215: INFO/MainProcess] Received task: cron_tasks.tasks.add[9494af3a-1608-4ae3-b08c-009ca5294a39]  
+[2020-04-15 08:34:02,217: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 08:34:02,218: INFO/MainProcess] Task cron_tasks.tasks.add[9494af3a-1608-4ae3-b08c-009ca5294a39] succeeded in 0.0024392969789914787s: True
+[2020-04-15 08:39:02,296: INFO/MainProcess] Received task: cron_tasks.tasks.add[8a211bf4-11cb-4b59-8b31-4859e7836845]  
+[2020-04-15 08:39:02,298: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 08:39:02,299: INFO/MainProcess] Task cron_tasks.tasks.add[8a211bf4-11cb-4b59-8b31-4859e7836845] succeeded in 0.001359159010462463s: True
+[2020-04-15 08:44:02,362: INFO/MainProcess] Received task: cron_tasks.tasks.add[d024908d-9c46-4238-98c5-b867c1a378d2]  
+[2020-04-15 08:44:02,363: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 08:44:02,365: INFO/MainProcess] Task cron_tasks.tasks.add[d024908d-9c46-4238-98c5-b867c1a378d2] succeeded in 0.002537738997489214s: True
+[2020-04-15 08:49:02,452: INFO/MainProcess] Received task: cron_tasks.tasks.add[5248aad6-277d-42ae-9072-14eab5bcb5f0]  
+[2020-04-15 08:49:02,453: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 08:49:02,454: INFO/MainProcess] Task cron_tasks.tasks.add[5248aad6-277d-42ae-9072-14eab5bcb5f0] succeeded in 0.001130376011133194s: True
+[2020-04-15 08:59:02,611: INFO/MainProcess] Received task: cron_tasks.tasks.add[6ceac6b1-6b86-455e-932c-a277de93e3cb]  
+[2020-04-15 08:59:02,612: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 08:59:02,613: INFO/MainProcess] Task cron_tasks.tasks.add[6ceac6b1-6b86-455e-932c-a277de93e3cb] succeeded in 0.001737184007652104s: True
+[2020-04-15 09:04:02,683: INFO/MainProcess] Received task: cron_tasks.tasks.add[4c0a18b0-a533-4885-b84e-898dbb61ed38]  
+[2020-04-15 09:04:02,684: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 09:04:02,685: INFO/MainProcess] Task cron_tasks.tasks.add[4c0a18b0-a533-4885-b84e-898dbb61ed38] succeeded in 0.0014213239774107933s: True
+[2020-04-15 09:09:02,722: INFO/MainProcess] Received task: cron_tasks.tasks.add[c7765c58-b061-43a8-a3b7-8c978b2ee6b7]  
+[2020-04-15 09:09:02,723: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 09:09:02,724: INFO/MainProcess] Task cron_tasks.tasks.add[c7765c58-b061-43a8-a3b7-8c978b2ee6b7] succeeded in 0.0015367899904958904s: True
+[2020-04-15 09:24:02,968: INFO/MainProcess] Received task: cron_tasks.tasks.add[8d53853f-c360-4c9e-a87a-7db08e5c566c]  
+[2020-04-15 09:24:02,969: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 09:24:02,970: INFO/MainProcess] Task cron_tasks.tasks.add[8d53853f-c360-4c9e-a87a-7db08e5c566c] succeeded in 0.0011734080035239458s: True
+[2020-04-15 09:29:03,045: INFO/MainProcess] Received task: cron_tasks.tasks.add[466874cf-1c8e-499e-a028-23fbe61b7e49]  
+[2020-04-15 09:29:03,046: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 09:29:03,047: INFO/MainProcess] Task cron_tasks.tasks.add[466874cf-1c8e-499e-a028-23fbe61b7e49] succeeded in 0.001048583013471216s: True
+[2020-04-15 09:34:03,097: INFO/MainProcess] Received task: cron_tasks.tasks.add[4fbc4f82-7f78-47fb-b1f5-3b15cb40e05f]  
+[2020-04-15 09:34:03,098: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 09:34:03,099: INFO/MainProcess] Task cron_tasks.tasks.add[4fbc4f82-7f78-47fb-b1f5-3b15cb40e05f] succeeded in 0.0010034620063379407s: True
+[2020-04-15 09:44:03,257: INFO/MainProcess] Received task: cron_tasks.tasks.add[b7afc31b-48e8-4bfa-acf8-07c7273c104e]  
+[2020-04-15 09:44:03,258: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 09:44:03,259: INFO/MainProcess] Task cron_tasks.tasks.add[b7afc31b-48e8-4bfa-acf8-07c7273c104e] succeeded in 0.0015695850015617907s: True
+[2020-04-15 09:49:03,334: INFO/MainProcess] Received task: cron_tasks.tasks.add[13b781a2-84c2-496b-8da9-068482e2323c]  
+[2020-04-15 09:49:03,335: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 09:49:03,337: INFO/MainProcess] Task cron_tasks.tasks.add[13b781a2-84c2-496b-8da9-068482e2323c] succeeded in 0.0016854939749464393s: True
+[2020-04-15 09:54:03,422: INFO/MainProcess] Received task: cron_tasks.tasks.add[b107de77-f16c-4ddc-9343-582b684bcab7]  
+[2020-04-15 09:54:03,423: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 09:54:03,424: INFO/MainProcess] Task cron_tasks.tasks.add[b107de77-f16c-4ddc-9343-582b684bcab7] succeeded in 0.0014866790152154863s: True
+[2020-04-15 09:59:03,512: INFO/MainProcess] Received task: cron_tasks.tasks.add[5d49cc50-46cb-4fb9-bea5-af20c18b3935]  
+[2020-04-15 09:59:03,513: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 09:59:03,514: INFO/MainProcess] Task cron_tasks.tasks.add[5d49cc50-46cb-4fb9-bea5-af20c18b3935] succeeded in 0.0015035499818623066s: True
+[2020-04-15 10:04:03,603: INFO/MainProcess] Received task: cron_tasks.tasks.add[5daa12b8-bb04-4167-951f-1af0660b2175]  
+[2020-04-15 10:04:03,604: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 10:04:03,604: INFO/MainProcess] Task cron_tasks.tasks.add[5daa12b8-bb04-4167-951f-1af0660b2175] succeeded in 0.0011224449845030904s: True
+[2020-04-15 10:09:03,668: INFO/MainProcess] Received task: cron_tasks.tasks.add[b2e4d030-b4aa-4cd6-a0cf-5ed5b405d02c]  
+[2020-04-15 10:09:03,670: WARNING/MainProcess] 文件不存在[/opt/pigg/ops/analysis/sshd.log]
+[2020-04-15 10:09:03,671: INFO/MainProcess] Task cron_tasks.tasks.add[b2e4d030-b4aa-4cd6-a0cf-5ed5b405d02c] succeeded in 0.002356383018195629s: True
