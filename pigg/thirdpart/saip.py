@@ -29,4 +29,4 @@ def queryAddress(ip):
 
 
 if __name__ == "__main__":
-    print(queryAddress('47.31.57.26'))
+    print(type(queryAddress('47.31.57.26')))

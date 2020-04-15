@@ -33,6 +33,7 @@ def __get_ip_address(ip):
     '''
     先使用爬虫获取, 爬取速度快;
     出错用易源免费api获取, 获取速度极慢(3~5s)
+    :return type: dict
     '''
     try:
         return address_parse.queryAddress(ip)
@@ -67,6 +68,7 @@ def sshd_attack_record_toDB():
     en_victim_area = victim_area.get('en_name')
     lines = lines[1:]
     for line in lines:
+        time.sleep(1)  # 不要爬太快
         # 攻击者ip
         attack_ip = re.findall(r'\d+\.\d+\.\d+\.\d+', line)[0]
         # 攻击者区域

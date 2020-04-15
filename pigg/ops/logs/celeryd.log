@@ -27613,3 +27613,35 @@ Traceback (most recent call last):
   File "/usr/local/python3/lib/python3.7/site-packages/celery/worker/consumer/consumer.py", line 562, in on_task_received
     strategy = strategies[type_]
 KeyError: 'cron_tasks.tasks.add'
+[2020-04-15 10:19:03,813: ERROR/MainProcess] Received unregistered task of type 'cron_tasks.tasks.add'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.7/site-packages/celery/worker/consumer/consumer.py", line 562, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'cron_tasks.tasks.add'
+[2020-04-15 10:44:04,189: ERROR/MainProcess] Received unregistered task of type 'cron_tasks.tasks.add'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.7/site-packages/celery/worker/consumer/consumer.py", line 562, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'cron_tasks.tasks.add'
