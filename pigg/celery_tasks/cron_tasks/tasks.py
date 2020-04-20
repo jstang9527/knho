@@ -8,7 +8,7 @@ django.setup()
 from celery import Celery
 from ops.analysis import sshd
 
-app = Celery('cron_tasks', broker='redis://localhost', backend='redis://localhost')
+app = Celery('cron_tasks', broker='redis://localhost/1', backend='redis://localhost/2')
 app.config_from_object('cron_tasks.config')
 
 

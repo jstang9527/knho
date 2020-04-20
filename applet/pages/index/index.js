@@ -107,7 +107,7 @@ Page({
   },
   onLoad: function () {
     this.pullNews()
-    this.pullAlter()
+    // this.pullAlter()
     this.onPullDownRefresh()
     if (app.globalData.userInfo){ this.setData({ userInfo: app.globalData.userInfo, hasUserInfo: true}) } 
     else if (this.data.canIUse) {
@@ -129,4 +129,29 @@ Page({
     app.globalData.userInfo = e.detail.userInfo
     this.setData({ userInfo: e.detail.userInfo, hasUserInfo: true })
   },
+  //告警已读移除
+  alreadyReadTab: function(e) {
+    var that = this
+    var deleteIndex = e.currentTarget.dataset.index
+    var alter = that.data.alter
+    wx.showModal({
+      title: '已读',
+      content: '删除该条告警记录',
+      showCancel: true,
+      success: function (res) {
+        if (res.confirm) {
+          wx.showLoading({ title: '删除中...', })
+          alter.splice(deleteIndex, 1)
+          that.setData({ alter: alter })
+          wx.hideLoading()
+        }
+      }
+    })
+  },
+  onShow: function() {
+    var that = this
+    that.setData({isAuthorized: app.getAuthStatus()})
+    console.log(that.data.isAuthorized)
+    that.pullAlter()
+  }
 })

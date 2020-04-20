@@ -41,7 +41,51 @@
   height: 100%;
   width: 100%;
 }
+
+
 /*广告以下*/
+.kbase{
+  background-color: #fff;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  padding: 3% 0px;
+}
+/* 平均分配宽度 */
+.kbase navigator:nth-of-type(1) {
+  flex-grow: 1;
+}
+.kbase navigator:nth-of-type(2) {
+  flex-grow: 1;
+}
+.kbase navigator:nth-of-type(3) {
+  flex-grow: 1;
+}
+.kbase .kbase_block {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #666;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.circle{
+  width: 60px;
+  height: 60px;
+  padding-bottom: 5px;
+}
+.circle-text{
+  /* color: #fff; */
+  font-size: 10px;
+}
+
+
+
+
+
+/*天气以下*/
 .panel__hd{
   margin: 3% 0px 3% 3%;
   /* padding-left: 3%; */
@@ -62,7 +106,7 @@
 }
 .temp{
   display: flex;
-  height: 120px;
+  height: 109px;
 }
 
 /*中部应用*/
@@ -71,7 +115,7 @@
 }
 .appImg{
   width: 120px;
-  height: 120px;
+  height: 108.44px;
   border-radius: 20px;
   left: 0px;
 }
@@ -85,13 +129,13 @@
   text-align:right
 }
 .one{
-  margin: 5px 0 0 5px;
+  margin: 0 0 0 5px;
   font-size: 18px;
   color: #87CEFA;
   font-weight: 800;
 }
 .two{
-  margin-top: 10px;
+  margin-top: 5px;
   font-size: 16px;
   color:#87CEFA;
 }
@@ -148,4 +192,12 @@
   margin: 6% auto;
   color: #c1c1c1;
   justify-content: center;
+}
+.unauth{
+  background-color: #fff;
+  width: 90%;
+  line-height: 60px;
+  height: 60px;
+  font-size: 16px;
+  color: orangered;
 }

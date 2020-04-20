@@ -29,15 +29,18 @@ Page({
     }
   },
   onLoad: function(){
-    // wx.showModal({
-    //   content: '暂未上线',
-    //   showCancel: false
-    // })
-    this.openDialog()
+    
+  },
+  onShow: function() {
+    var that = this;
+    this.data.timer = setInterval(function () { that.openDialog() }, 2000)
+    
   },
 
-
   //未完成提示
-  openDialog: function () { this.setData({ istrue: true }) },
+  openDialog: function () { 
+    this.setData({ istrue: true })
+    clearInterval(this.data.timer); 
+  },
   closeDialog: function () { this.setData({ istrue: false }) }
 })

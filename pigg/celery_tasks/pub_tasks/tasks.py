@@ -1,4 +1,6 @@
 import os
+import sys
+sys.path.append('/opt/pigg')
 import django
 from celery import Celery
 from thirdpart.clamd_scan import clamavScan, reloadDB
@@ -9,7 +11,7 @@ from django.core.cache import cache
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pigg.settings')
 django.setup()
 
-app = Celery('celery_tasks.public_tasks', broker='redis://localhost', backend='redis://localhost')
+app = Celery('pub_tasks', broker='redis://localhost/3', backend='redis://localhost/4')
 
 
 @app.task

@@ -20,7 +20,7 @@
           <image data-type='focusCity' bindtap='onNavigatorTap' src="../../resources/pub/icon/in.jpg" class="top-right" mode="cover"></image>
         </view>
         <view wx:else>
-          <button style="width: 128rpx; padding: 0px; background-color: green;" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+          <button style="width: 128rpx; padding: 0px; background-color: #fff;" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
             <text class='userflag'>授权登录</text> 
           </button>
         </view>
@@ -29,7 +29,7 @@
     
     <view class="weui-panel__hd">我的关注</view>
   
-    <view wx:if="{{!hasUserInfo}}" class="unauth">
+    <view wx:if="{{!isLogin}}" class="unauth">
       <text class="text_align">您还未登录</text>
     </view>
     <view wx:else class="page__bd">

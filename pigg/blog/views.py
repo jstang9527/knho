@@ -32,7 +32,7 @@ def article_category(request):
 def get_article(request):
     article_id = request.GET.get('article_id')
     article = Article.objects.get(article_id=article_id)
-
+    # print('article_id', article_id)
     article.pageview = article.pageview + 1  # 阅读量
     article.save()
 

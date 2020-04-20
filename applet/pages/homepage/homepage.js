@@ -1,32 +1,30 @@
-// pages/homepage/homepage.js
-
 const app = getApp()
 const cookieUtil = require('../../utils/cookie.js')
 const authUtil = require('../../utils/auth.js')
 
 Page({
-  /**
-   * 页面的初始数据
-   */
   data: {
     isLogin: null,
     userInfo: null,
     hasUserInfo: null,
     personal_grids: null, //个人应用
   },
-
+  //首次授权
   getUserInfo: function(e) {
+    console.log('xx')
     //点击取消按钮
     if (e.detail.userInfo == null) { console.log("授权失败") } 
     else {//点击允许按钮
       this.setData({ userInfo: e.detail.userInfo, hasUserInfo: true })
+      app.globalData.userInfo = e.detail.userInfo
+      this.authorize()
     }
     //全局对象用户信息赋值
     app.globalData.userInfo = e.detail.userInfo
-    this.authorize()
+    // this.authorize()
   },
   
-  //应用
+  //关注应用跳转
   onNavigatorTapApp: function (e) {
     var dataType = e.currentTarget.dataset.type
     var index = e.currentTarget.dataset.index
@@ -169,6 +167,7 @@ Page({
       }
     })
   },
+  //添加关注app
   addApp: function () {
     var that = this
     if (!that.data.hasUserInfo) {
@@ -219,6 +218,7 @@ Page({
     this.updatePersonalMenuData()
   },
   onShow: function () {
+    console.log(this.data.isLogin, this.data.is_authorized)
     this.updatePersonalMenuData()
   },
   onPullDownRefresh: function () {

@@ -77,3 +77,6 @@
 .page__bd{
   padding-bottom: 5%;
 }
+.xxx{
+  color: #efefef;
+}

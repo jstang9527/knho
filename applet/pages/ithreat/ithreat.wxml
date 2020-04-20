@@ -1,51 +1,66 @@
 <view class="page">
-  <!-- 头部排名 -->
-  <view class='contentBottom top-b'>
-    <view class='BottomFirst'>
-      <text id='0' data-id='0'>最新攻击源</text>
-    </view>
-    <swiper class="tab-right" style='background:{{bgColor}};' vertical="true" autoplay="true" circular="true" interval="2000" display-multiple-items='5'>
-        <block wx:for-index="idx" wx:for='{{rollAttacks}}' wx:key="attack">
-          <swiper-item class="swiper-item">
-            <view class='content-item'>
-              <text class='victim'>{{item.time}}</text>
-              <text class='victim victim-mid'>{{item.ip}}</text>
-              <text class='victim victim-right'>{{item.area}}</text>
-            </view>
-          </swiper-item>
-        </block> 
-    </swiper>
+	<!-- 头部排名 -->
+	<view class='contentBottom top-b'>
+		<view class='BottomFirst'>
+			<text id='0' data-id='0'>最新攻擊源</text>
+		</view>
+		<swiper class="tab-right" style='background:{{bgColor}};' vertical="true" autoplay="true" circular="true" interval="2000" display-multiple-items='5'>
+			<block wx:for-index="idx" wx:for='{{rollAttacks}}' wx:key="attack">
+				<swiper-item class="swiper-item">
+					<view class='content-item' bindtap="touchHandleTab" data-type="attack" data-id="{{item.ip}}">
+						<text class='victim'>{{item.time}}</text>
+						<text class='victim victim-mid'>{{item.ip}}</text>
+						<text class='victim victim-right'>{{item.area}}</text>
+					</view>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+	<!--地区分布bar-->
+	<view class='contentBottom'>
+		<view class='bar'>
+			<view class='bar-item' wx:for="{{category}}" wx:key="mapIndex">
+				<view class="nav_left_items {{curMap == index ? 'active' : ''}}" bindtap="switchMapTab" data-id="{{index}}">{{item}}</view>
+			</view>
+		</view>
+	</view>
+	<!--地图组件-->
+	<view class="container">
+		<ec-canvas id="mychart-dom-area" canvas-id="mychart-area" ec="{{ ec }}"></ec-canvas>
+	</view>
+	<!-- 底部排名 -->
+	<view class='contentBottom top-b'>
+		<view class='BottomFirst'>
+			<text id='0' data-id='0'>最新受災體</text>
+		</view>
+		<swiper class="tab-right" style='background:{{bgColor}};' vertical="true" autoplay="true" circular="true" interval="2000" display-multiple-items='5'>
+			<view class="right-item">
+				<block wx:for-index="idx" wx:for='{{rollVictims}}' wx:key="victim">
+					<swiper-item class="swiper-item">
+						<view class='content-item' bindtap="touchHandleTab" data-type="victim" data-id="{{item.ip}}">
+							<text class='victim'>{{item.time}}</text>
+							<text class='victim victim-mid'>{{item.ip}}</text>
+							<text class='victim victim-right'>{{item.area}}</text>
+						</view>
+					</swiper-item>
+				</block>
+			</view>
+		</swiper>
+	</view>
+
+	<!--橫switchBar-->
+	<view class='contentBottom'>
+		<view class='bar bar-chart'>
+			<view class='bar-item bar-chart-item' wx:for="{{chartList}}" wx:key="*this">
+				<view class="nav_items {{curNav == index ? 'active' : ''}}" bindtap="switchRightTab" data-id="{{index}}">{{item}}</view>
+			</view>
+		</view>
+	</view>
+  <view class="wxchart">
+    <canvas wx:if="{{curNav < 2}}" canvas-id="columnCanvas" class="canvas"></canvas>
+    <canvas wx:else canvas-id="pieCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
   </view>
-  <!--地区分布bar-->
-  <view class='contentBottom'>
-    <view class='bar'>
-      <view class='bar-item' wx:for="{{category}}" wx:key="mapIndex">
-        <view class="nav_left_items {{curMap == index ? 'active' : ''}}" bindtap="switchMapTab" data-id="{{index}}">{{item}}</view>
-      </view>
-    </view>
-  </view>
-  <!--地图组件-->
-  <view class="container">
-    <ec-canvas id="mychart-dom-area" canvas-id="mychart-area" ec="{{ ec }}"></ec-canvas>
-  </view>
-  <!-- 底部排名 -->
-    <view class='contentBottom bot-b'>
-      <view class='BottomFirst'>
-        <text id='0' data-id='0'>最新受害靶</text>
-      </view>
-      <swiper class="tab-right" style='background:{{bgColor}};' vertical="true" autoplay="true" circular="true" interval="2000" display-multiple-items='5'>
-        <view class="right-item">
-          <block wx:for-index="idx" wx:for='{{rollVictims}}' wx:key="victim">
-            <swiper-item class="swiper-item">
-              <view class='content-item'>
-                <text class='victim'>{{item.time}}</text>
-                <text class='victim victim-mid'>{{item.ip}}</text>
-                <text class='victim victim-right'>{{item.area}}</text>
-              </view>
-            </swiper-item>
-          </block> 
-        </view>
-      </swiper>
-    </view>
-  <!--攻击手段-->
+
+  <view class="declare"></view>
+  <!-- <button bindtap="refreshChart">刷新</button> -->
 </view>

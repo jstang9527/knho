@@ -7,6 +7,7 @@ function buildHeader() {
   return header
 }
 
+//這個是地图統計數據{name: china, value: 221}
 function getMapData(app) {
   var promise = new Promise(function (resolve, reject) {
     wx.request({
@@ -20,7 +21,7 @@ function getMapData(app) {
   })
   return promise
 }
-
+//请求
 
 module.exports = {
   getMapData: getMapData

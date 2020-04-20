@@ -1,102 +1,122 @@
 <!--index.wxml-->
-<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}" 
-  indicator-active-color="{{activeColor}}">
-  <block wx:for="{{imgUrls}}" wx:key="imgurl">
-    <swiper-item>
-      <navigator url="{{item.link}}" hover-class="navigator-hover">
-        <image src="{{item.url}}" class="slide-image" width="355" height="200" />
-      </navigator>
-    </swiper-item>
-  </block>
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{activeColor}}">
+	<block wx:for="{{imgUrls}}" wx:key="imgurl">
+		<swiper-item>
+			<navigator url="{{item.link}}" hover-class="navigator-hover">
+				<image src="{{item.url}}" class="slide-image" width="355" height="200" />
+			</navigator>
+		</swiper-item>
+	</block>
 </swiper>
+
+<!--维库精选-->
+<view class="kbase">
+	<navigator url="../../pages/article/article?article_id=6" class="kbase_block">
+		<image class="circle" src="../../resources/tabbar/http.png"></image>
+		<text class="circle-text">HTTP服务器</text>
+		<text class="circle-text">工作原理及Python实现</text>
+	</navigator>
+	<navigator url="../../pages/article/article?article_id=7" class="kbase_block">
+		<image class="circle" src="../../resources/tabbar/cdn.png"></image>
+		<text class="circle-text">高性能网站</text>
+		<text class="circle-text">网站加速及抗DDos</text>
+	</navigator>
+	<navigator url="../../pages/article/article?article_id=5" class="kbase_block">
+		<image class="circle" src="../../resources/tabbar/mysql.png"></image>
+		<text class="circle-text">解决系统架构短板</text>
+		<text class="circle-text">K8s实现Mysql读写分离</text>
+	</navigator>
+</view>
 <view class="notice">
-  <image class="notice-img" src="../../resources/pub/icon/notice.gif"></image>
-  <swiper class="tab-right" style='background:{{bgColor}};' vertical="true" autoplay="true" circular="true" interval="5000" display-multiple-items='1'>
-      <block wx:for-index="idx" wx:for='{{notice}}' wx:key="*this">
-        <swiper-item class="swiper-item">
-          <view class='content-item'>
-            <text class='victim'>{{item}}</text>
-          </view>
-        </swiper-item>
-      </block>       
-  </swiper>
+	<image class="notice-img" src="../../resources/pub/icon/notice.gif"></image>
+	<swiper class="tab-right" style='background:{{bgColor}};' vertical="true" autoplay="true" circular="true" interval="5000" display-multiple-items='1'>
+		<block wx:for-index="idx" wx:for='{{notice}}' wx:key="*this">
+			<swiper-item class="swiper-item">
+				<view class='content-item'>
+					<text class='victim'>{{item}}</text>
+				</view>
+			</swiper-item>
+		</block>
+	</swiper>
 </view>
 <view class="body">
-    <!-- 天气 -->
-    <view class="panel__hd"><text class="title"> 所在城市</text></view>
-    <view class="panel__bd">
-      <navigator url="" wx:for='{{weatherData}}' wx:key="*this" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-          <image class="weui-media-box__thumb" src="../../resources/app/weather/{{item.img_src}}.png" />
-        </view>
-        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-          <view class="weui-media-box__title">{{item.city}}-{{item.week}}-{{item.weather}}</view>
-          <view class="weui-media-box__desc">
-            <text>{{item.date}} {{item.datetime}}</text>
-          </view>
-          <view wx:if='{{item.temperature > 19}}' class="weui-media-box__desc">
-            <text style="color: red">温度：{{item.temperature}}度</text><text> , 天气质量：{{item.quality}}</text>
-          </view>
-          <view wx:else class="weui-media-box__desc">
-            <text style="color: green">温度：{{item.temperature}}度</text><text> , 天气质量：{{item.quality}}</text>
-          </view>
-          <view class="weui-media-box__desc">
-            <text>相对湿度：{{item.humidity}},风向: {{item.wind_direct}}</text>
-          </view>
-        </view>
-      </navigator>
+	<!-- 天气 -->
+	<view class="panel__hd"><text class="title"> 所在城市</text></view>
+	<view class="panel__bd">
+		<view url="" wx:for='{{weatherData}}' wx:key="*this" class="weui-media-box weui-media-box_appmsg">
+			<view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+				<image class="weui-media-box__thumb" src="../../resources/app/weather/{{item.img_src}}.png" />
+			</view>
+			<view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+				<view class="weui-media-box__title">{{item.city}}-{{item.week}}-{{item.weather}}</view>
+				<view class="weui-media-box__desc">
+					<text>{{item.date}} {{item.datetime}}</text>
+				</view>
+				<view wx:if='{{item.temperature > 19}}' class="weui-media-box__desc">
+					<text style="color: red">温度：{{item.temperature}}度</text><text> , 天气质量：{{item.quality}}</text>
+				</view>
+				<view wx:else class="weui-media-box__desc">
+					<text style="color: green">温度：{{item.temperature}}度</text><text> , 天气质量：{{item.quality}}</text>
+				</view>
+				<view class="weui-media-box__desc">
+					<text>相对湿度：{{item.humidity}},风向: {{item.wind_direct}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 消息公告 -->
+	<view class="">
+		<view class="panel__hd"><text class="title">消息公告</text></view>
+		<view class="panel__bd app_list">
+			<navigator url="../../pages/mico/mico" hover-class="weui-cell_active" class="temp">
+				<view class="appContent">
+					<text class="one">弹性容器云</text>
+					<text class="two">采用kubernetes实现Serverless和容器化的弹性服务。</text>
+				</view>
+				<image class="appImg" src="../../resources/app/icon_mico-service.png"></image>
+			</navigator>
+		</view>
+		<view class="panel__bd app_list">
+			<navigator url="../../pages/ithreat/ithreat" hover-class="weui-cell_active" class="temp">
+				<image class="appImg" src="../../resources/app/icon_attack.png"></image>
+				<view class="appContent rightAppContent">
+					<text class="one right-one">攻击溯源实时监控</text>
+					<text class="two right-two">对密码爆破/SYN flood/刷站等攻击行为进行实时受灾监控。</text>
+				</view>
+			</navigator>
+		</view>
+		<view class="panel__bd">
+			<navigator url="../../pages/monitor/monitor" hover-class="weui-cell_active" class="temp">
+				<view class="appContent">
+					<text class="one three">容器云监控</text>
+					<text class="two three">助力实现弹性容器云, 在告警触发时, 自动化伸缩容器实例。</text>
+				</view>
+				<image class="appImg" src="../../resources/app/icon_monitor.png"></image>
+			</navigator>
+		</view>
+	</view>
+	<!-- 告警 -->
+	<view>
+		<view class="panel__hd"><text class="title">最近告警</text></view>
+
+		<view wx:if="{{isAuthorized}}" wx:for="{{alter}}" wx:key="alter" class="panel__bd" data-index="{{index}}" bindlongtap="alreadyReadTab">
+			<view class="alter">
+				<view class="alter-content">
+					{{item.content}}
+				</view>
+				<view class="alter-label">
+					<text class="label">{{item.host}}</text>
+					<text class="time">{{item.time}}</text>
+				</view>
+			</view>
+		</view>
+    <view wx:if="{{!isAuthorized}}" class="panel__bd">
+      <text class="state unauth">请先登录认证</text>
     </view>
-    <!-- 服务 -->
-    <view class="">
-      <view class="panel__hd"><text class="title">消息公告</text></view>
-      <view class="panel__bd app_list">
-        <view class="temp">
-          <view class="appContent">
-            <text class="one">弹性容器云</text>
-            <text class="two">采用kubernetes实现Serverless和容器化的弹性服务。</text>
-          </view>
-          <image class="appImg" src="../../resources/app/icon_mico-service.png"></image>
-        </view>
-      </view>
-      <view class="panel__bd app_list">
-        <view class="temp">
-          <image class="appImg" src="../../resources/app/icon_attack.png"></image>
-          <view class="appContent rightAppContent">
-            <text class="one right-one">攻击溯源实时监控</text>
-            <text class="two right-two">对密码爆破/SYN flood/刷站等攻击行为进行实时受灾监控。</text>
-          </view>
-        </view>
-      </view>
-      <view class="panel__bd">
-        <view class="temp">
-          <view class="appContent">
-            <text class="one three">容器云监控</text>
-            <text class="two three">助力实现弹性容器云, 在告警触发时, 自动化伸缩容器实例。</text>
-          </view>
-          <image class="appImg" src="../../resources/app/icon_monitor.png"></image>
-        </view>
-      </view>
-    </view>
-    <!-- 告警 -->
-    <view class="">
-      <view class="panel__hd"><text class="title">最近告警</text></view>
-      
-      <view wx:for="{{alter}}" wx:key="alter" class="panel__bd">
-        <view class="alter">
-          <view class="alter-content">
-            {{item.content}}
-          </view>
-          <view class="alter-label">
-            <text class="label">{{item.host}}</text>
-            <text class="time">{{item.time}}</text>
-          </view>
-        </view>  
-      </view>
-    
-    </view>
+	</view>
 </view>
 <!--底部声明-->
 <view class="state">
-  <image src="../../resources/pub/icon/icon-icp.png" style="width:16px;height:16px"></image>
-  <text>ICP备案号:粤B2-20030206</text>
+	<!-- <image src="../../resources/pub/icon/icon-icp.png" style="width:16px;height:16px"></image> -->
+	<text>粤ICP备20026686号</text>
 </view>

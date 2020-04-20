@@ -75,12 +75,16 @@
         <!-- 头部左边栏 -->
         <view class="box mem-dis-label-left">
             <view class="top-title">Total:</view>
-            <view class="top-title">{{allCircle.memRing.series[0].data+allCircle.memRing.series[1].data}}G</view>
+            <view wx:if="{{allCircle.memRing.series[0].data+allCircle.memRing.series[1].data == 100}}" class="top-title">
+              0G
+            </view>
+            <view wx:else class="top-title">{{allCircle.memRing.series[0].data+allCircle.memRing.series[1].data}}G</view>
         </view>
         <!--头部右边栏-->
         <view class="box mem-dis-label-right">
           <view class="top-title">Total:</view>
-          <view class="top-title">{{allCircle.diskRing.series[0].data+allCircle.diskRing.series[1].data}}G</view>
+          <view wx:if="{{allCircle.diskRing.series[0].data+allCircle.diskRing.series[1].data == 100}}" class="top-title">0G</view>
+          <view wx:else class="top-title">{{allCircle.diskRing.series[0].data+allCircle.diskRing.series[1].data}}G</view>
         </view>
   </view>
   <!-- 线图 -->

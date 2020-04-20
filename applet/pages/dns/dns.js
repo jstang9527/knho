@@ -3,7 +3,7 @@ const cookieUtil = require('../../utils/cookie.js')
 const authUtil = require('../../utils/auth.js')
 Page({
   data: {
-    dns_ip: '192.168.47.128',
+    dns_ip: '47.92.255.39',
     inputShowed: false,
     inputVal: "",  // 公共查询搜索栏
     result: "",  // 公共查询结果值

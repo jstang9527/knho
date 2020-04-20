@@ -157,7 +157,12 @@ Page({
     })
     //3请求后台hostMEM数据成功后画Circle图;
     promUtils.getMemGuage(app, hostname).then(function (data) {
-      memRing.title.name = data.usagePercent + '%', memRing.series[0].data = data.memTotal - data.usage, memRing.series[1].data = data.usage
+      memRing.title.name = data.usagePercent + '%'
+      if (data.memTotal > 0){
+        memRing.series[0].data = data.memTotal - data.usage
+        memRing.series[1].data = data.usage
+      }else{ memRing.series[0].data = 100, memRing.series[1].data = 0 }
+      
       that.setData({ allCircle: allCircle })
       if(that.data.firstMemRing){
         console.log('首次画HostMEM图， 很耗时间')
@@ -171,7 +176,12 @@ Page({
     })
     //4请求后台hostDisk数据成功后画Circle图
     promUtils.getDiskGuage(app, hostname).then(function (data) {
-      diskRing.title.name = data.usagePercent + '%', diskRing.series[0].data = data.diskTotal - data.usage, diskRing.series[1].data = data.usage
+      diskRing.title.name = data.usagePercent + '%'
+      if(data.diskTotal > 0){
+        diskRing.series[0].data = data.diskTotal - data.usage
+        diskRing.series[1].data = data.usage
+      }else{ diskRing.series[0].data = 100, diskRing.series[1].data = 0 }
+      
       that.setData({ allCircle: allCircle })
       if(that.data.firstDiskRing){
         console.log('首次画HostDisk图， 很耗时间')
@@ -191,6 +201,7 @@ Page({
     promUtils.getCCpuMatrix(app, that.data.currentHost, that.data.interval).then(function (data) {
       var cpuSeries = []
       var allLine = that.data.allLine
+      // if (data.con_value.length == 0){ console.log('无数据'); return}
       for (var i = 0; i < data.con_value.length; i++) {
         cpuSeries.push({ name: data.con_value[i].name, data: data.con_value[i].data, format: function (val, name) { return val.toFixed(2) + '%'; } })
       }
@@ -209,6 +220,7 @@ Page({
     promUtils.getCMemMatrix(app, that.data.currentHost, that.data.interval).then(function (data) {
       let memSeries = []
       let allLine = that.data.allLine
+      // if (data.con_value.length == 0){ console.log('无数据'); return}
       for (var i = 0; i < data.con_value.length; i++) {
         memSeries.push({ name: data.con_value[i].name, data: data.con_value[i].data, format: function (val, name) { return val.toFixed(2) + 'M'; } })
       }
@@ -330,8 +342,6 @@ Page({
     }
   },
   onShow: function () {
-    // 页面显示
-    //周期为：15秒 的周期定时器
     var that = this;
     that.data.myintervalid = setInterval(function () {
       that.upDataCircleAndDrawing()
@@ -340,15 +350,6 @@ Page({
     }, 15000)
   },
 
-  onHide: function () {
-    // 页面隐藏
-    //关闭 周期为：15秒 的周期定时器
-    clearInterval(this.data.myintervalid);
-  },
-
-  onUnload: function () {
-    // 页面关闭
-    //关闭 周期为：15秒 的周期定时器
-    clearInterval(this.data.myintervalid);
-  }
+  onHide: function () { clearInterval(this.data.myintervalid); },
+  onUnload: function () { clearInterval(this.data.myintervalid); }
 });

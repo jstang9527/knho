@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '(pwah@@(c$dd3x0nfb^9#7&ro!%#^8d*+pvgi+wfwbbh+1=ba)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -60,7 +60,7 @@ ROOT_URLCONF = 'pigg.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'backend',
         'USER': 'root',
-        'PASSWORD': '123456',
+        'PASSWORD': 'KNHOmao65410/*-',
         'HOST': 'localhost',
         'PORT': 3306,
         # 'OPTIONS': {
@@ -141,11 +141,11 @@ RESOURCES_DIR = os.path.join(BASE_DIR, 'resources')
 LOG_DIR = os.path.join(BASE_DIR, 'ops', 'logs')
 
 # clamav
-LOCAL_IP = '192.168.27.128'
+LOCAL_IP = '47.92.255.39'
 FILES_DIR = os.path.join(RESOURCES_DIR, 'tmpfiles')
 YARA_DIR = '/var/lib/clamav'
 # DNS
-DNS_URL = 'http://192.168.27.128:8081'
+DNS_URL = 'http://localhost:8081'
 DNS_BASICAUTH = HTTPBasicAuth('admin', 'admin')
 DNS_CONFIG = os.path.join(RESOURCES_DIR, 'data', 'dnsmasq.conf')
 # Prometheus

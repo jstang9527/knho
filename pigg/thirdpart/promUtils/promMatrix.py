@@ -49,7 +49,9 @@ def public_request(time_interval, query_params, num):
             both['data'] = data
         # both['data'] = data
         containers.append(both)
-
+    
+    if not containers:  # 没有容器时或者宿主机宕机时
+        containers = [{'name': '', 'data': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}]
     return {'yAxis_data': yAxis_data, 'con_value': containers}
 
 
@@ -59,7 +61,7 @@ def fillData(num, exist_time, data, start, step):  # exist_time是有数据的�
     j = 0
     for i in range(num):
         if len(exist_time) > j:
-            print(exist_time[j], '=', start)
+            # print(exist_time[j], '=', start)
             if exist_time[j] == start:
                 result_data.append(data[j])
                 j = j + 1
@@ -105,6 +107,6 @@ def memContainers(hostname='', time_interval=60 * 10):  # 默认10分钟, 只能
 
 
 if __name__ == "__main__":
-    a = cpuContainers(hostname='47.92.255.39', time_interval=60 * 10)
+    a = memContainers(hostname='47.92.255.39', time_interval=60 * 10)
     a = json.dumps(a)
     print(a)

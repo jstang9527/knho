@@ -51,7 +51,7 @@ App({
   onHide: function () { },
   globalData: {
     userInfo: null,
-    serverUrl: 'http://192.168.27.128:8000',
+    serverUrl: 'https://zan71.com',
     apiVersion: '/api/v1.0',
     appId: 'wxb2671a978f6f8cda',
     //这个字段是判断用户的主动登陆和主动注销

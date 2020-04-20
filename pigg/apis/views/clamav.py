@@ -6,7 +6,7 @@ from celery import current_app
 from utils.response import CommonResponseMixin, ReturnCode
 from django.views import View
 from pigg import settings
-from celery_tasks.public_tasks import clamavfile, multi_clamd
+from celery_tasks.pub_tasks.tasks import clamavfile, multi_clamd
 from django.core.cache import cache
 from thirdpart import clamd_scan
 

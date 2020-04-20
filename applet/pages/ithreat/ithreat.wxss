@@ -12,12 +12,9 @@
 /*头部列表*/
 .top-b{
   padding-top: 5%;
-  padding-bottom: 5%;
+  padding-bottom: 1%;
 }
-/*底部列表*/
-.bot-b{
-  padding-bottom: 30%;
-}
+
 .BottomFirst {
   width: 90%;
   display: flex;
@@ -70,10 +67,6 @@
   /*-----------*/
   color: #111
 }
-/* .right-item { 
-  height: 100%;
-  width: 100%;
-} */
 .content-item {
   height: 30px;
   width: 98%;
@@ -93,7 +86,46 @@
 .swiper-item{
   width: 60%;
 }
+/*統計數據圖*/
+.contentBottom1 {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #87CEFA;
+}
+.bar-chart-item{
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #663a83;
+  line-height: 28px;
+  border: 1px solid #333333;
+  border-radius: 0px;
+  border-bottom: 0px;
+}
+.nav_items.active{
+  background: #333333; /* 背景色变成白色 */
+  color: #aa3636; /* 字体编程蓝色 */
+  border: 0px;
+}
+.wxchart{
+  height: 300px;
+  width: 90%;
+  background-color: #333333;
+  padding-top: 5%;
+  margin-left: 5%;
+}
+.canvas{
+  background-color: #333333;
+  height: 300px;
+  width: 95%;
 
+}
+/*底部列表*/
+.declare{
+  padding-bottom: 10%;
+}
 
 /* 地图套件*/
 .container {
@@ -107,7 +139,7 @@
 ec-canvas {
   /* margin-top: 50%; */
   width: 100%;
-  height: 300px;
+  height: 220px;
   background-color: black;
   position: relative;
   top: 0;
