@@ -1,13 +1,18 @@
 # KNHO
-DevOps 小程序
 
-异步框架：celery  
-依赖主机服务： mysql  
-依赖容器服务：dnsmasq、clamd、redis-server、prometheus、cadvisor、grafana、node-export  
+## 小程序后端
+### Description：
+该小程序主要功能有: 基于用户的域名解析、文件病毒检索、监控告警(容器、主机)、知识库等小功能
 
----
-#### 项目启动：  
-##### 1.项目根目录下，即lmanage.py文件同级  
+### Require:
+- Python3.7  
+- Django2.0(>=2.0)
+- Celery  
+- Mysql  
+- Docker
+
+### Install:  
+##### 1.项目根目录下，即manage.py文件同级  
 [root@knho pigg]#supervisord  
 ##### 2.启动mysql服务  
 [root@knho pigg]#systemctl restart mysqld  
@@ -27,6 +32,8 @@ DevOps 小程序
 [root@knho pigg]#docker run -d -p 3000:3000 --name=grafana --network host -e "GF_AUTH_BASIC_ENABLED=true" -e "GF_AUTH_ANONYMOUS_ENABLED=false"  grafana/grafana:4.2.0  
 ##### 3.7启动node-export  
 [root@knho pigg]#docker run -d  -v "/proc:/host/proc" -v "/sys:/host/sys" -v "/:/rootfs" --name node-export --net=host prom/node-exporter --path.procfs /host/proc --path.sysfs /host/sys --collector.filesystem.ignored-mount-points "^/(sys|proc|dev|host|etc)($|/)"  
-
-##### 4启动后台  
+##### 3.8启动后台  
 python3 manage.py runserver 0.0.0.0:8000  
+### Publish
+由于小程序的后端API接口必须走443端口，所以需要配置安全证书(需要域名并进行申请证书)，进行服务上线。  
+详情见本人博客[HTTPS + Nginx + uWgsi(HA) + Django](https://blog.csdn.net/qq_38900565/article/details/104603838)
