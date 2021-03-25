@@ -48,7 +48,7 @@ PyMySQL==0.9.3
 pyparsing==2.4.7
 pyserial==3.4
 pytz==2019.3
-PyYAML==5.3
+PyYAML==5.4
 query-string==2019.4.13
 redis==3.4.1
 requests==2.23.0
