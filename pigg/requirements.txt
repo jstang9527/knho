@@ -27,7 +27,7 @@ kazoo==2.5.0
 kombu==4.6.8
 lazy-object-proxy==1.4.3
 logger==1.4
-lxml==4.5.0
+lxml==4.6.5
 mccabe==0.6.1
 monotonic==1.5
 mysqlclient==1.4.6
